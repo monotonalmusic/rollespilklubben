@@ -1,18 +1,19 @@
 .cat-container {
-    width: 32px; /* Width of one cat frame */
-    height: 32px; /* Height of the cat sprite */
+    right: 0;
+    width: 64px; /* Width of one cat frame */
+    height: 64px; /* Height of the cat sprite */
     overflow: hidden;
   }
   
   .cat {
-    width: 128px; /* Total width of the sprite sheet (4 frames * 32px per frame) */
-    height: 32px;
-    background: url(/assets/black_0_frames.png) no-repeat;
+    width: 248px; /* Total width of the sprite sheet (4 frames * 32px per frame) */
+    height: 64px;
+    background: url(/assets/black_0_frames_bigger.png) no-repeat;
     animation: run .5s steps(4) infinite;
   }
   
   @keyframes run {
     100% {
-      background-position: -128px;
+      background-position: -248px;
     }
   }
