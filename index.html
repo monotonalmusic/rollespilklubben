@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="fog.css">
+    <link rel="stylesheet" href="fog_start.css">
+    <link rel="stylesheet" href="cat.css">
     <script src="app.js" defer></script>
     <title>Home</title>
 </head>
@@ -15,21 +17,44 @@
             <img id="left-leg" src="/assets/aoe_frame_1.png" alt="Character with left leg forward">
             <img id="right-leg" src="/assets/aoe_frame_2.png" alt="Character with right leg forward" style="display: none;">
         </div>
-        <section class="skov"></section>
-        <section class="skovsump"></section>
+        <section class="skov">
+          <div class="cat-container">
+            <div class="cat"></div>
+          </div>
+        </section>
+        <section class="skovsump">
+            <div class="fogwrapper">
+                <div id="foglayer_01start" class="fogstart">
+                    <div class="image01start"></div>
+                    <div class="image02start"></div>
+                  </div>
+                  <div id="foglayer_02start" class="fogstart">
+                    <div class="image01start"></div>
+                    <div class="image02start"></div>
+                  </div>
+                  <div id="foglayer_03start" class="fogstart">
+                    <div class="image01start"></div>
+                    <div class="image02start"></div>
+                  </div>
+            </div>
+
+        </section>
         <section class="sump">
-            <div id="foglayer_01" class="fog">
-                <div class="image01"></div>
-                <div class="image02"></div>
-              </div>
-              <div id="foglayer_02" class="fog">
-                <div class="image01"></div>
-                <div class="image02"></div>
-              </div>
-              <div id="foglayer_03" class="fog">
-                <div class="image01"></div>
-                <div class="image02"></div>
-              </div>
+            <div class="fogwrapper">
+                <div id="foglayer_01" class="fog">
+                    <div class="image01"></div>
+                    <div class="image02"></div>
+                  </div>
+                  <div id="foglayer_02" class="fog">
+                    <div class="image01"></div>
+                    <div class="image02"></div>
+                  </div>
+                  <div id="foglayer_03" class="fog">
+                    <div class="image01"></div>
+                    <div class="image02"></div>
+                  </div>
+            </div>
+            
         </section>
         <section class="bro"></section>
         <section class="by"></section>

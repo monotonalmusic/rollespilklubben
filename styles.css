@@ -4,10 +4,19 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    overflow-x: hidden; 
 }
 
 section {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+header {
+    background-image: url(/assets/bg/header_bg.png);
+    background-size: cover;
+    background-position: center;
+    width: 100%;
     height: 100vh;
 }
 
