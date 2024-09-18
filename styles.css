@@ -4,8 +4,44 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    overflow-x: hidden; 
 }
 
 section {
     height: 100vh;
 }
+
+/*Character*/
+
+.character {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px;
+    height: 300px;
+}
+
+.character img {
+    width: 100%;
+    height: auto;
+}
+
+.skov {
+    background-image: url(/assets/bg/site_background.png);
+    background-position: center;
+    background-size: cover;
+}
+
+.skovsump {
+    background-image: url(/assets/bg/forest_swamp_transition.png);
+    background-position: center;
+    background-size: cover;
+}
+
+.sump {
+    background-image: url(/assets/bg/swamp_background.png);
+    background-position: center;
+    background-size: cover;
+}
+

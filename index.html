@@ -4,14 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="fog.css">
     <script src="app.js" defer></script>
     <title>Home</title>
 </head>
 <body>
     <header></header>
     <main>
+        <div class="character">
+            <img id="left-leg" src="/assets/aoe_frame_1.png" alt="Character with left leg forward">
+            <img id="right-leg" src="/assets/aoe_frame_2.png" alt="Character with right leg forward" style="display: none;">
+        </div>
         <section class="skov"></section>
-        <section class="sump"></section>
+        <section class="skovsump"></section>
+        <section class="sump">
+            <div id="foglayer_01" class="fog">
+                <div class="image01"></div>
+                <div class="image02"></div>
+              </div>
+              <div id="foglayer_02" class="fog">
+                <div class="image01"></div>
+                <div class="image02"></div>
+              </div>
+              <div id="foglayer_03" class="fog">
+                <div class="image01"></div>
+                <div class="image02"></div>
+              </div>
+        </section>
         <section class="bro"></section>
         <section class="by"></section>
         <section class="vindebro"></section>
