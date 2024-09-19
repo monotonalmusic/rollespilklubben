@@ -5,9 +5,11 @@ let catAnimation = gsap.fromTo(".cat-container",
     { 
       x: 0,  // End position (100px from the right)
       scrollTrigger: {
+        delay: 1,
         trigger: ".skov",
         start: "top right",  
-        end: "top left",
+        end: "top left+300px",
+        ease: "power2.inOut",
         scrub: 4,  
         onLeave: () => {
           // This will run when the animation finishes

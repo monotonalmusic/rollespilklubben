@@ -67,7 +67,7 @@ header {
     flex-flow: column;
     justify-content: center;
     align-items: center;
-    background-image: url(/assets/bg/forest_swamp_transition_upside_down.png);
+    background-image: url(/assets/bg/swamp_forest_transition.png);
     background-position: center;
     background-size: cover;
 }
@@ -104,4 +104,23 @@ header {
     background-position: center;
     background-size: cover;
 }
+
+.vindebro {
+    background-image: url(/assets/bg/site_background.png);
+    background-position: center;
+    background-size: cover;
+}
+
+
+.castle-wall {
+    position: relative;
+    z-index: 1001;
+    height: 100%;
+    width: 100%;
+    background-image: url(/assets/castle-wall.png);
+    background-position: center;
+    background-size: cover;
+}
+
+
 
