@@ -1,19 +1,35 @@
 .cat-container {
-    right: 0;
-    width: 64px; /* Width of one cat frame */
-    height: 64px; /* Height of the cat sprite */
+    position: relative;
+    right: -100px;
+    width: 62px; /* Width of one cat frame */
+    height: 63px; /* Height of the cat sprite */
     overflow: hidden;
   }
   
   .cat {
     width: 248px; /* Total width of the sprite sheet (4 frames * 32px per frame) */
-    height: 64px;
-    background: url(/assets/black_0_frames_bigger.png) no-repeat;
+    height: 63px;
+    background: url(/assets/cat/black_0_frames_bigger.png) no-repeat;
     animation: run .5s steps(4) infinite;
   }
+
+  .cat.new-sprite {
+    width: 248px; /* Total width of the sprite sheet (4 frames * 32px per frame) */
+    height: 63px;
+    background: url(/assets/cat/black_0_sitting_frames.png) no-repeat;
+    animation: sit .5s steps(3) 1 forwards;
+  }
+  
+  
   
   @keyframes run {
     100% {
       background-position: -248px;
+    }
+  }
+
+  @keyframes sit {
+    100% {
+      background-position: -190px;
     }
   }

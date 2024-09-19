@@ -1,15 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Germania+One&display=swap');
 
 body {
+    position: relative;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    width: 100vw;
+    overflow-x: hidden;
 }
 
 section {
     margin: 0;
     padding: 0;
     height: 100vh;
+    width: 100vw;
 }
 
 header {
@@ -37,6 +41,10 @@ header {
 }
 
 .skov {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
     background-image: url(/assets/bg/site_background.png);
     background-position: center;
     background-size: cover;
@@ -53,4 +61,12 @@ header {
     background-position: center;
     background-size: cover;
 }
+
+.bro {
+    background-image: url(/assets/bg/forest_swamp_transition_upside_down.png);
+    background-position: center;
+    background-size: cover;
+}
+
+
 

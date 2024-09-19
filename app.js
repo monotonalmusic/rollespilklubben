@@ -1,16 +1,39 @@
 gsap.registerPlugin(ScrollTrigger);
 
-gsap.from(".cat-container", {
-    x: 1000,
-    scrollTrigger: {
-      trigger: ".cat-container",
-      start: "top right",  // Adjust the start and end positions as needed
-      end: "top left",
-      scrub: 4,  // Increase this value to make the animation slower
-      ease: "circ",  // You can experiment with different easing functions here
-    },
-});
+let catAnimation = gsap.fromTo(".cat-container", 
+    { x: 900 },  // Start position
+    { 
+      x: 0,  // End position (100px from the right)
+      scrollTrigger: {
+        trigger: ".skov",
+        start: "top right",  
+        end: "top left",
+        scrub: 4,  
+        onLeave: () => {
+          // This will run when the animation finishes
+          document.querySelector(".cat").classList.add("new-sprite");
+  
+          // Kill the scroll trigger to stop further animations
+          catAnimation.scrollTrigger.disable();
+  
+          // Get the final computed x position after the animation
+          let finalX = gsap.getProperty(".cat-container", "x");
+  
 
+          // Manually set the position to lock it in place
+          gsap.set(".cat-container", {
+            x: finalX,  // Fix the x position to where it should be
+            position: "absolute !important",  // Keep the element's position relative or fixed
+            clearProps: "transform"  // Ensure all GSAP transforms are cleared
+          });
+  
+        }
+      }
+    }
+  );
+  
+  
+  
 window.addEventListener('scroll', function() {
     const leftLegImg = document.getElementById('left-leg');
     const rightLegImg = document.getElementById('right-leg');
