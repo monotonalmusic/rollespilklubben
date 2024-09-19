@@ -7,6 +7,7 @@
     height: 95px; /* Height of the saruman sprite */
     overflow: hidden;
   }
+
   
   .saruman-animation {
     position: relative;
@@ -15,7 +16,8 @@
     height: 95px;
     background: url(/assets/sprites/saruman/Saruman.png) no-repeat;
     background-position: 0; /* Start on the first frame */
-    animation: play-sprite 1s steps(6) forwards;
+    animation: play-sprite .8s steps(6) 8;
+    animation-delay: 1s;
   }
   
   @keyframes play-sprite {
