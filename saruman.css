@@ -1,0 +1,29 @@
+.saruman-container {
+    position: relative;
+    top: 300px;
+    left: 46%;
+    z-index: 1001;
+    width: 100px; /* Width of one saruman frame */
+    height: 95px; /* Height of the saruman sprite */
+    overflow: hidden;
+  }
+  
+  .saruman-animation {
+    position: relative;
+    z-index: 1001;
+    width: 700px; /* Total width of the sprite sheet (7 frames * 100px per frame) */
+    height: 95px;
+    background: url(/assets/sprites/saruman/Saruman.png) no-repeat;
+    background-position: 0; /* Start on the first frame */
+    animation: play-sprite 1s steps(6) forwards;
+  }
+  
+  @keyframes play-sprite {
+    0% {
+      background-position: 0; /* Start at the first frame */
+    }
+    100% {
+      background-position: -590px; /* End at the last frame (6 * 100px for 7 frames) */
+    }
+  }
+  

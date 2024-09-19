@@ -63,10 +63,21 @@ header {
 }
 
 .bro {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
     background-image: url(/assets/bg/forest_swamp_transition_upside_down.png);
     background-position: center;
     background-size: cover;
 }
+
+.broimg {
+    position: relative;
+    z-index: 1000;
+    width: 100%;
+}
+
 
 
 
