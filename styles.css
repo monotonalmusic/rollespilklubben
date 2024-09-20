@@ -113,6 +113,8 @@ header {
 
 
 .castle-wall {
+    display: flex;
+    gap: 50px;
     position: relative;
     z-index: 1001;
     height: 100%;
