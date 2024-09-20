@@ -1,74 +1,79 @@
+.archer-div {
+  display: flex;
+  justify-content: center;
+}
+
 .archer-container-1 {
     position: relative;
-    top: 125px;
-    z-index: 1001;
-    width: 187px; /* Width of one saruman frame */
-    height: 130px; /* Height of the saruman sprite */
+    top: 35px;
+    z-index: 998;
+    width: 125px; /* Width of one saruman frame */
+    height: 189px; /* Height of the saruman sprite */
     overflow: hidden;
   }
 .archer-container-2 {
     position: relative;
-    top: 125px;
-    z-index: 1001;
-    width: 187px; /* Width of one saruman frame */
-    height: 130px; /* Height of the saruman sprite */
+    top: 35px;
+    z-index: 998;
+    width: 125px; /* Width of one saruman frame */
+    height: 189px; /* Height of the saruman sprite */
     overflow: hidden;
   }
 .archer-container-3 {
     position: relative;
-    top: 125px;
-    z-index: 1001;
-    width: 187px; /* Width of one saruman frame */
-    height: 130px; /* Height of the saruman sprite */
+    top: 35px;
+    z-index: 998;
+    width: 125px; /* Width of one saruman frame */
+    height: 189px; /* Height of the saruman sprite */
     overflow: hidden;
   }
 .archer-container-4 {
     transform: scaleX(-1);
     position: relative;
-    top: 125px;
+    top: 35px;
     z-index: 1001;
-    width: 187px; /* Width of one saruman frame */
-    height: 130px; /* Height of the saruman sprite */
+    width: 125px; /* Width of one saruman frame */
+    height: 189px; /* Height of the saruman sprite */
     overflow: hidden;
   }
 .archer-container-5 {
     transform: scaleX(-1);
     position: relative;
-    top: 125px;
-    z-index: 1001;
-    width: 187px; /* Width of one saruman frame */
-    height: 130px; /* Height of the saruman sprite */
+    top: 35px;
+    z-index: 998;
+    width: 125px; /* Width of one saruman frame */
+    height: 189px; /* Height of the saruman sprite */
     overflow: hidden;
   }
 .archer-container-6 {
     transform: scaleX(-1);
     position: relative;
-    top: 125px;
-    z-index: 1001;
-    width: 187px; /* Width of one saruman frame */
-    height: 130px; /* Height of the saruman sprite */
+    top: 35px;
+    z-index: 998;
+    width: 125px; /* Width of one saruman frame */
+    height: 189px; /* Height of the saruman sprite */
     overflow: hidden;
   }
 
   
   .archer-animation-1 {
     position: relative;
-    z-index: 1001;
-    width: 561px; /* Total width of the sprite sheet (7 frames * 100px per frame) */
-    height: 130px;
-    background: url(/assets/sprites/archer/Archer_Red_frames.png) no-repeat;
+    z-index: 998;
+    width: 250px; /* Total width of the sprite sheet (7 frames * 100px per frame) */
+    height: 189px;
+    background: url(/assets/sprites/archer/acher_sharpshooter_2frame.png) no-repeat;
     background-position: 0; /* Start on the first frame */
-    animation: play-archer 2s steps(3) infinite;
+    animation: play-archer 3s steps(2) infinite;
   }
   
   .archer-animation-2 {
     position: relative;
-    z-index: 1001;
-    width: 561px; /* Total width of the sprite sheet (7 frames * 100px per frame) */
-    height: 130px;
-    background: url(/assets/sprites/archer/Archer_Red_frames.png) no-repeat;
+    z-index: 998;
+    width: 250px; /* Total width of the sprite sheet (7 frames * 100px per frame) */
+    height: 189px;
+    background: url(/assets/sprites/archer/acher_sharpshooter_2frame.png) no-repeat;
     background-position: 0; /* Start on the first frame */
-    animation: play-archer 1s steps(3) infinite;
+    animation: play-archer 3s steps(2) infinite;
   }
   
   @keyframes play-archer {
@@ -76,6 +81,6 @@
       background-position: 0; /* Start at the first frame */
     }
     100% {
-      background-position: -575px; /* End at the last frame (6 * 100px for 7 frames) */
+      background-position: -250px; /* End at the last frame (6 * 100px for 7 frames) */
     }
   }

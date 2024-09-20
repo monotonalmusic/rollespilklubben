@@ -45,10 +45,21 @@ header {
     flex-flow: column;
     justify-content: center;
     align-items: center;
-    background-image: url(/assets/bg/site_background.png);
+    background-image: url(/assets/bg/farmland-background.png);
     background-position: center;
     background-size: cover;
 }
+
+.farm-fg {
+    position: relative;
+    z-index: 1000;
+    height: 100%;
+    width: 100%;
+    background-image: url(/assets/fg/farmland-foreground.png);
+    background-position: center;
+    background-size: cover;
+}
+
 
 .skovsump {
     background-image: url(/assets/bg/forest_swamp_transition.png);
@@ -114,7 +125,8 @@ header {
 
 .castle-wall {
     display: flex;
-    gap: 50px;
+    justify-content: center;
+    gap: 350px;
     position: relative;
     z-index: 1001;
     height: 100%;
