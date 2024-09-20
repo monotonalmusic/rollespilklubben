@@ -58,7 +58,7 @@
     height: 130px;
     background: url(/assets/sprites/archer/Archer_Red_frames.png) no-repeat;
     background-position: 0; /* Start on the first frame */
-    animation: play-sprite 2s steps(3) infinite;
+    animation: play-archer 2s steps(3) infinite;
   }
   
   .archer-animation-2 {
@@ -68,10 +68,10 @@
     height: 130px;
     background: url(/assets/sprites/archer/Archer_Red_frames.png) no-repeat;
     background-position: 0; /* Start on the first frame */
-    animation: play-sprite 1s steps(3) infinite;
+    animation: play-archer 1s steps(3) infinite;
   }
   
-  @keyframes play-sprite {
+  @keyframes play-archer {
     0% {
       background-position: 0; /* Start at the first frame */
     }
