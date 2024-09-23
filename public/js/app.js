@@ -5,7 +5,6 @@ let catAnimation = gsap.fromTo(".cat-container",
     { 
       x: 0,  // End position (100px from the right)
       scrollTrigger: {
-        delay: 1,
         trigger: ".cat-container",  // Start the animation when ".cat-container" enters the viewport
         start: "top right",  
         end: "top left",  // End the animation when ".cat-container" is 100px from the left

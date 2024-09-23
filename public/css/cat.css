@@ -19,7 +19,8 @@
     background: url(/assets/cat/black_0_sitting_frames.png) no-repeat;
     animation: sit .5s steps(3) 1 forwards;
   }
-  
+
+
   
   
   @keyframes run {

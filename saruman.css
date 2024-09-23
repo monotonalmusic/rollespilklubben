@@ -1,9 +1,0 @@
-.saruman-animation {
-  position: relative;
-  z-index: 1001;
-  left: 43%;
-  top: 350px;
-  width: 200px; /* Display width of each frame */
-  height: 200px; /* Height of each frame */
-  background: url(/assets/sprites/saruman/gandalf_smaller.gif) no-repeat;
-}
