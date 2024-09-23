@@ -36,9 +36,16 @@ header {
 }
 
 .character img {
+    display: none;
     width: 100%;
     height: auto;
 }
+
+#frame-1 {
+    display: block;
+}
+
+
 
 .skov {
     display: flex;
