@@ -136,5 +136,12 @@ header {
     background-size: cover;
 }
 
+.dragon {
+    position: relative;
+    top: 50%;
+    left: -400px; /* Off-screen to the left initially */
+    transform: translateY(-50%);
+}
+
 
 

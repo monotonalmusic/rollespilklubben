@@ -33,6 +33,15 @@ let catAnimation = gsap.fromTo(".cat-container",
       }
     }
   );
+
+  gsap.to(".dragon", {
+    x: window.innerWidth + 400, // Move to the right beyond the screen
+    duration: 3, // Animation duration in seconds
+    ease: "power1.inOut", // Easing function
+    onComplete: function() {
+      gsap.set(".dragon", { x: window.innerWidth + 400 }); // Lock the position off-screen
+    }
+  });
   
   
   

@@ -1,0 +1,18 @@
+/* styles.css */
+.container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+#imagePreview {
+    margin-top: 20px;
+}
+
+#preview {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #ddd;
+    padding: 5px;
+    display: block;
+    margin: 0 auto;
+}
