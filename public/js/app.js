@@ -44,19 +44,22 @@ let catAnimation = gsap.fromTo(".cat-container",
   
   
   
-window.addEventListener('scroll', function() {
-    const leftLegImg = document.getElementById('left-leg');
-    const rightLegImg = document.getElementById('right-leg');
+  window.addEventListener('scroll', function() {
+    const frames = [
+        document.getElementById('frame-1'),
+        document.getElementById('frame-2'),
+        document.getElementById('frame-3'),
+        document.getElementById('frame-4'),
+        document.getElementById('frame-5'),
+        document.getElementById('frame-6')
+    ];
 
-        if (window.scrollY % 150 < 75) {  
-            leftLegImg.style.display = 'block';
-            rightLegImg.style.display = 'none';
-        } else {
-            leftLegImg.style.display = 'none';
-            rightLegImg.style.display = 'block';
-        }
-        
-    }
-);
+    const scrollValue = window.scrollY % 450; // Each cycle is 450px (6 frames x 75px)
+    const frameIndex = Math.floor(scrollValue / 75); // Divide by 75 to find the frame
+
+    frames.forEach((frame, index) => {
+        frame.style.display = index === frameIndex ? 'block' : 'none';
+    });
+});
 
 

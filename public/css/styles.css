@@ -73,6 +73,18 @@ header {
     background-size: cover;
 }
 
+.swamp-fg {
+    position: relative;
+    z-index: 1000;
+    height: 100%;
+    width: 100%;
+    background-image: url(/assets/fg/swamp_foreground.png);
+    background-position: center;
+    background-size: cover;
+}
+
+
+
 .bro {
     display: flex;
     flex-flow: column;
