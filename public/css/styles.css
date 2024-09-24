@@ -57,6 +57,16 @@ header {
     background-size: cover;
 }
 
+.ogre{
+    position: relative;
+}
+
+.beaten-knight {
+    position: relative;
+    right: 5%;
+}
+
+
 .farm-fg {
     position: relative;
     z-index: 1000;
@@ -89,6 +99,19 @@ header {
     background-position: center;
     background-size: cover;
 }
+
+.shrek-container {
+    position: relative;
+    left: 70%;
+    top: 87%;
+    z-index: 999;
+}
+
+.shrek {
+    position: relative;
+    z-index: 999;
+}
+
 
 
 
