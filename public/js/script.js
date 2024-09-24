@@ -49,6 +49,7 @@ function displayUploadedItem(data) {
     // Create a new div for the uploaded item
     const itemDiv = document.createElement('div');
     itemDiv.className = 'uploaded-item';
+    itemDiv.dataset.filepath = data.filePath; // Store the file path in the data attribute for deletion
 
     // Add the image
     const img = document.createElement('img');
@@ -72,8 +73,35 @@ function displayUploadedItem(data) {
     description.textContent = `Description: ${data.description}`;
     itemDiv.appendChild(description);
 
+    // Add a delete button
+    const deleteBtn = document.createElement('button');
+    deleteBtn.textContent = 'Delete';
+    deleteBtn.addEventListener('click', () => deleteUploadedItem(itemDiv, data.filePath));
+    itemDiv.appendChild(deleteBtn);
+
     // Append the new item to the uploadedItems section
     uploadedItems.appendChild(itemDiv);
+}
+
+// Function to handle deletion of an uploaded item
+async function deleteUploadedItem(itemDiv, filePath) {
+    if (confirm('Are you sure you want to delete this item?')) {
+        try {
+            const response = await fetch(`/delete?filePath=${encodeURIComponent(filePath)}`, {
+                method: 'DELETE'
+            });
+
+            if (response.ok) {
+                // Remove the item from the DOM
+                itemDiv.remove();
+            } else {
+                alert('Error deleting item!');
+            }
+        } catch (err) {
+            console.error('Error:', err);
+            alert('An error occurred while deleting the item.');
+        }
+    }
 }
 
 // Function to load all previously uploaded items when the page loads

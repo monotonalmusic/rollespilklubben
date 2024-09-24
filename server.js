@@ -62,6 +62,31 @@ app.post('/upload', (req, res) => {
     });
 });
 
+// DELETE route to delete an uploaded item
+app.delete('/delete', (req, res) => {
+    const { filePath } = req.query;
+
+    // Find the index of the item to delete
+    const index = uploadedItems.findIndex(item => item.filePath === filePath);
+    if (index === -1) {
+        return res.status(404).send('Item not found.');
+    }
+
+    // Remove the file from the file system
+    const fileName = path.join(__dirname, filePath);
+    fs.unlink(fileName, (err) => {
+        if (err) {
+            console.error('Error deleting file:', err);
+            return res.status(500).send('Error deleting file.');
+        }
+
+        // Remove the item from the uploadedItems array
+        uploadedItems.splice(index, 1);
+
+        res.sendStatus(200);
+    });
+});
+
 // Serve the uploaded images
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
