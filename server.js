@@ -4,6 +4,7 @@ const path = require('path');
 const fs = require('fs');
 const app = express();
 
+const metadataFilePath = './metadata.json'; // Path to store the metadata
 let uploadedItems = []; // Array to store uploaded items metadata
 
 // Set storage for Multer
@@ -27,6 +28,22 @@ app.use(express.json());
 // Serve static files
 app.use(express.static('public'));
 
+// Function to save metadata to file
+function saveMetadataToFile() {
+    fs.writeFileSync(metadataFilePath, JSON.stringify(uploadedItems, null, 2), 'utf-8');
+}
+
+// Load metadata from the file when the server starts
+function loadExistingUploads() {
+    if (fs.existsSync(metadataFilePath)) {
+        const data = fs.readFileSync(metadataFilePath, 'utf-8');
+        uploadedItems = JSON.parse(data);
+    }
+}
+
+// Call the function to load existing uploads when the server starts
+loadExistingUploads();
+
 // POST route to handle image and event data
 app.post('/upload', (req, res) => {
     upload(req, res, (err) => {
@@ -47,7 +64,7 @@ app.post('/upload', (req, res) => {
             return res.status(400).send('Missing event details.');
         }
 
-        // Save the uploaded data (in memory for now)
+        // Save the uploaded data (in memory and metadata.json)
         const newItem = {
             filePath: `/uploads/${req.file.filename}`,
             title,
@@ -56,6 +73,7 @@ app.post('/upload', (req, res) => {
         };
 
         uploadedItems.push(newItem);
+        saveMetadataToFile(); // Save metadata after every upload
 
         // Respond with the file path and other form data
         res.json(newItem);
@@ -82,6 +100,7 @@ app.delete('/delete', (req, res) => {
 
         // Remove the item from the uploadedItems array
         uploadedItems.splice(index, 1);
+        saveMetadataToFile(); // Save updated metadata after deletion
 
         res.sendStatus(200);
     });

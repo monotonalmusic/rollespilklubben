@@ -1,4 +1,4 @@
-// image preview
+// Image preview functionality
 document.querySelector('input[type="file"]').addEventListener('change', function(event) {
     const file = event.target.files[0];
     
@@ -8,7 +8,7 @@ document.querySelector('input[type="file"]').addEventListener('change', function
         reader.onload = function(e) {
             const previewImage = document.getElementById('preview');
             previewImage.src = e.target.result;
-            previewImage.style.display = 'block';
+            previewImage.style.display = 'block'; // Show the image preview
         };
 
         reader.readAsDataURL(file);
@@ -33,6 +33,7 @@ document.getElementById('uploadForm').addEventListener('submit', async function 
             const result = await response.json();
             displayUploadedItem(result);
             this.reset(); // Clear the form fields after successful upload
+            clearImagePreview(); // Clear the image preview after successful upload
         } else {
             alert('Error uploading file!');
         }
@@ -41,6 +42,13 @@ document.getElementById('uploadForm').addEventListener('submit', async function 
         alert('An error occurred while uploading the file.');
     }
 });
+
+// Function to clear the image preview
+function clearImagePreview() {
+    const previewImage = document.getElementById('preview');
+    previewImage.src = ''; // Clear the image src
+    previewImage.style.display = 'none'; // Hide the image preview
+}
 
 // Function to display the uploaded item
 function displayUploadedItem(data) {
