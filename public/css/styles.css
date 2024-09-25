@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Germania+One&display=swap');
 
-body {
+body, html {
     position: relative;
     margin: 0;
     padding: 0;
@@ -13,10 +13,78 @@ section {
     margin: 0;
     padding: 0;
     height: 100vh;
-    width: 100vw;
+    max-width: 100%;
 }
 
-header {
+
+h1, h3, h4 {
+    font-family: 'Germania One', cursive;
+    margin: 0;
+    color: white;
+}
+
+h1 {
+    font-size: 7rem;
+}
+
+h3 {
+    font-size: 3rem;
+}
+
+button {
+    font-family: 'Germania One', cursive;
+    font-size: 2rem;
+    padding: 10px 20px;
+    background-color: #CF503A;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 100px;
+}
+
+button:hover {
+    background-color: #cc2a0d;
+
+}
+
+
+
+.header-text {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 50%;
+}
+
+.login {
+    position: relative;
+}
+
+.login-button-container {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.buttons-header-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 700px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.header-section {
     background-image: url(/assets/bg/header_bg.png);
     background-size: cover;
     background-position: center;
@@ -45,6 +113,12 @@ header {
     display: block;
 }
 
+.dragon {
+    position: relative;
+    top: 50%;
+    left: -400px; /* Off-screen to the left initially */
+    transform: translateY(-50%);
+}
 
 
 .skov {
@@ -158,7 +232,6 @@ header {
 .castle-wall {
     display: flex;
     justify-content: center;
-    gap: 100px;
     position: relative;
     z-index: 1001;
     height: 100%;
@@ -167,6 +240,12 @@ header {
     background-position: center;
     background-size: cover;
 }
+
+.wizard-div {
+    width: 400px;
+}
+
+
 
 .wizard-speechbubble {
     position: relative;
@@ -183,14 +262,18 @@ header {
     transform: translate(-50%, -50%);
 }
 
-
-
-.dragon {
+.ballista-container {
     position: relative;
-    top: 50%;
-    left: -400px; /* Off-screen to the left initially */
-    transform: translateY(-50%);
+    bottom: 200px;
+    left: 100px;
 }
+
+.ballista {
+    position: relative;
+}
+
+
+
 
 
 
