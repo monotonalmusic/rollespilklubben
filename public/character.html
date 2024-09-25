@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medieval Character Editor</title>
+    <link rel="stylesheet" href="css/character.css">
+    <script src="js/character.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Character Profile</h1>
+        <form id="characterForm">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" placeholder="Enter character's name">
+            </div>
+
+            <div class="form-group">
+                <label for="race">Race:</label>
+                <input type="text" id="race" placeholder="Enter character's race">
+            </div>
+
+            <div class="form-group">
+                <label for="strengths">Strengths:</label>
+                <textarea id="strengths" placeholder="Enter character's strengths"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="weaknesses">Weaknesses:</label>
+                <textarea id="weaknesses" placeholder="Enter character's weaknesses"></textarea>
+            </div>
+
+            <button type="button" onclick="saveCharacter()">Save Character</button>
+        </form>
+
+        <div id="message"></div>
+    </div>
+
+</body>
+</html>
