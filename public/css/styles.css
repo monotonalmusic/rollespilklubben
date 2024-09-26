@@ -129,6 +129,7 @@ button:hover {
     top: 50%;
     left: -400px;
     transform: translateY(-50%);
+    z-index: 1003;
 }
 
 .skov {
@@ -141,13 +142,25 @@ button:hover {
     background-size: cover;
 }
 
+.fight-container {
+    position: absolute;
+    top: 120vh;
+}
+
+.orc-rider {
+    position: absolute;
+    top: 130vh;
+    right: 15%;
+}
+
+
 .ogre {
     position: relative;
 }
 
 .beaten-knight {
     position: relative;
-    right: 5%;
+    right: 15%;
 }
 
 .farm-fg {
@@ -165,6 +178,17 @@ button:hover {
     background-position: center;
     background-size: cover;
 }
+
+.forestswamp-fg {
+    position: relative;
+    z-index: 1000;
+    height: 100%;
+    width: 100%;
+    background-image: url(/assets/fg/forest_swamp_transition_foreground.png);
+    background-position: center;
+    background-size: cover;
+}
+
 
 .sump {
     background-image: url(/assets/bg/swamp_background.png);

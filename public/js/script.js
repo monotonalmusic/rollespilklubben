@@ -1,3 +1,15 @@
+// Function to update the visibility of the header
+function updateHeaderVisibility() {
+    const uploadedItems = document.getElementById('uploadedItems');
+    const header = document.querySelector('.din-karakterer-text');
+
+    if (uploadedItems.children.length > 0) {
+        header.style.display = 'block'; // Show the header if there are uploaded items
+    } else {
+        header.style.display = 'none'; // Hide the header if there are no uploaded items
+    }
+}
+
 // Image preview functionality
 document.querySelector('input[type="file"]').addEventListener('change', function (event) {
     const file = event.target.files[0];
@@ -34,6 +46,7 @@ document.getElementById('uploadForm').addEventListener('submit', async function 
             displayUploadedItem(result);
             this.reset(); // Clear the form fields after successful upload
             clearImagePreview(); // Clear the image preview after successful upload
+            updateHeaderVisibility(); // Update header visibility after uploading a new item
         } else {
             alert('Error uploading file!');
         }
@@ -110,11 +123,12 @@ function displayUploadedItem(data) {
 
     // Append the new item to the uploadedItems section
     uploadedItems.appendChild(itemDiv);
+    updateHeaderVisibility(); // Update header visibility after displaying an uploaded item
 }
 
 // Function to handle deletion of an uploaded item
 async function deleteUploadedItem(itemDiv, filePath) {
-    if (confirm('Are you sure you want to delete this item?')) {
+    if (confirm('Er du sikker på, at du vil slette denne genstand?')) {
         try {
             const response = await fetch(`/delete?filePath=${encodeURIComponent(filePath)}`, {
                 method: 'DELETE'
@@ -123,6 +137,7 @@ async function deleteUploadedItem(itemDiv, filePath) {
             if (response.ok) {
                 // Remove the item from the DOM
                 itemDiv.remove();
+                updateHeaderVisibility(); // Update header visibility after deleting an item
             } else {
                 alert('Error deleting item!');
             }
@@ -179,19 +194,18 @@ document.getElementById('editForm').addEventListener('submit', async function (e
         });
 
         if (response.ok) {
-            alert('Item updated successfully!');
+            alert('Genstand opdateret!');
             document.getElementById('editFormContainer').style.display = 'none'; // Hide the edit form
             document.getElementById('uploadedItems').innerHTML = ''; // Clear the list
             loadUploadedItems(); // Reload the list with updated data
         } else {
-            alert('Error updating item.');
+            alert('Fejl ved opdatering af genstand.');
         }
     } catch (err) {
         console.error('Error:', err);
-        alert('An error occurred while updating the item.');
+        alert('En fejl opstod under opdatering af genstanden.');
     }
 });
-
 
 // Function to load all previously uploaded items when the page loads
 async function loadUploadedItems() {
@@ -202,6 +216,9 @@ async function loadUploadedItems() {
         items.forEach(item => {
             displayUploadedItem(item); // Display each uploaded item
         });
+
+        // Update header visibility after loading items
+        updateHeaderVisibility();
     } catch (err) {
         console.error('Error fetching uploaded items:', err);
     }
@@ -210,5 +227,6 @@ async function loadUploadedItems() {
 // Load uploaded items on page load
 window.onload = loadUploadedItems;
 
-// Initially hide the edit form
+// Initially hide the edit form and the header
 document.getElementById('editFormContainer').style.display = 'none';
+document.querySelector('.din-karakterer-text').style.display = 'none';

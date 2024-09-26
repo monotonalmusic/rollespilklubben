@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Germania+One&display=swap');
+
 /* Medieval background and fonts */
 body {
     background: url('https://www.transparenttextures.com/patterns/aged-paper.png');
     font-family: 'IM Fell English SC', serif;
     color: #3b2314;
+    background-color: #000000;
     padding: 20px;
     margin: 0;
 }
@@ -18,7 +21,7 @@ body {
 }
 
 h1, h2 {
-    font-family: 'UnifrakturMaguntia', cursive;
+    font-family: 'Germania One', cursive;
     text-align: center;
     color: #462304;
     font-size: 2.5em;
