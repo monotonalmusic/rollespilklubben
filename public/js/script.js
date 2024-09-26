@@ -62,24 +62,39 @@ function displayUploadedItem(data) {
     // Add the image
     const img = document.createElement('img');
     img.src = data.filePath;
-    img.alt = data.title;
+    img.alt = data.Navn; // Use 'Navn' for alt text
     img.style.maxWidth = '200px';
     itemDiv.appendChild(img);
 
-    // Add the title
-    const title = document.createElement('h3');
-    title.textContent = `Title: ${data.title}`;
-    itemDiv.appendChild(title);
+    // Add the Navn
+    const name = document.createElement('h3');
+    name.textContent = `Navn: ${data.Navn}`;
+    itemDiv.appendChild(name);
 
-    // Add the event date
-    const eventDate = document.createElement('p');
-    eventDate.textContent = `Event Date: ${data.eventDate}`;
-    itemDiv.appendChild(eventDate);
+    // Add the Race
+    const race = document.createElement('p');
+    race.textContent = `Race: ${data.Race}`;
+    itemDiv.appendChild(race);
 
-    // Add the description
-    const description = document.createElement('p');
-    description.textContent = `Description: ${data.description}`;
-    itemDiv.appendChild(description);
+    // Add the Klasse
+    const klasse = document.createElement('p');
+    klasse.textContent = `Klasse: ${data.Klasse}`;
+    itemDiv.appendChild(klasse);
+
+    // Add the Styrker
+    const styrker = document.createElement('p');
+    styrker.textContent = `Styrker: ${data.Styrker}`;
+    itemDiv.appendChild(styrker);
+
+    // Add the Svageheder
+    const svageheder = document.createElement('p');
+    svageheder.textContent = `Svageheder: ${data.Svageheder}`;
+    itemDiv.appendChild(svageheder);
+
+    // Add the MereOm
+    const mereOm = document.createElement('p');
+    mereOm.textContent = `Mere om: ${data.MereOm}`;
+    itemDiv.appendChild(mereOm);
 
     // Add a delete button
     const deleteBtn = document.createElement('button');
@@ -128,3 +143,4 @@ async function loadUploadedItems() {
 
 // Load uploaded items on page load
 window.onload = loadUploadedItems;
+

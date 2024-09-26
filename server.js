@@ -56,20 +56,23 @@ app.post('/upload', (req, res) => {
             return res.status(400).send('No file uploaded.');
         }
 
-        // Get additional form data (title, event date, description)
-        const { title, eventDate, description } = req.body;
+        // Get additional form data (Navn, Race, Klasse, Styrker, Svageheder, Mere om..)
+        const { Navn, Race, Klasse, Styrker, Svageheder, MereOm } = req.body;
 
         // Check if the additional fields are received
-        if (!title || !eventDate || !description) {
-            return res.status(400).send('Missing event details.');
+        if (!Navn || !Race || !Klasse || !Styrker || !Svageheder || !MereOm) {
+            return res.status(400).send('Missing required details.');
         }
 
         // Save the uploaded data (in memory and metadata.json)
         const newItem = {
             filePath: `/uploads/${req.file.filename}`,
-            title,
-            eventDate,
-            description,
+            Navn,
+            Race,
+            Klasse,
+            Styrker,
+            Svageheder,
+            MereOm
         };
 
         uploadedItems.push(newItem);
@@ -105,6 +108,8 @@ app.delete('/delete', (req, res) => {
         res.sendStatus(200);
     });
 });
+
+
 
 // Serve the uploaded images
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));

@@ -3,25 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Uploader</title>
+    <title>Medieval Image Uploader</title>
     <link rel="stylesheet" href="css/uploads.css">
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-        <h1>Upload Image with Event Details</h1>
-        <!-- Form to upload image and event data -->
+        <h1>Upload Your Character's Portrait</h1>
+        <!-- Form to upload image and character data -->
         <form id="uploadForm" enctype="multipart/form-data">
             <label for="image">Select Image:</label>
             <input type="file" name="image" id="image" accept="image/*" required><br><br>
 
-            <label for="title">Title:</label>
-            <input type="text" name="title" id="title" placeholder="Enter event title" required><br><br>
+            <label for="Navn">Navn:</label>
+            <input type="text" name="Navn" id="Navn" placeholder="Enter character name" required><br><br>
 
-            <label for="eventDate">Event Date:</label>
-            <input type="date" name="eventDate" id="eventDate" required><br><br>
+            <label for="Race">Race:</label>
+            <input type="text" name="Race" id="Race" placeholder="Enter character race" required><br><br>
 
-            <label for="description">Description:</label>
-            <textarea name="description" id="description" rows="4" placeholder="Enter event description" required></textarea><br><br>
+            <label for="Klasse">Klasse:</label>
+            <input type="text" name="Klasse" id="Klasse" placeholder="Enter character class" required><br><br>
+
+            <label for="Styrker">Styrker:</label>
+            <input type="text" name="Styrker" id="Styrker" placeholder="Enter character strengths" required><br><br>
+
+            <label for="Svageheder">Svageheder:</label>
+            <input type="text" name="Svageheder" id="Svageheder" placeholder="Enter character weaknesses" required><br><br>
+
+            <label for="MereOm">Mere om:</label>
+            <textarea name="MereOm" id="MereOm" rows="4" placeholder="Tell more about the character" required></textarea><br><br>
 
             <button type="submit">Upload</button>
         </form>
@@ -31,7 +41,7 @@
         </div>
         
         <!-- Section to display the uploaded image and details -->
-        <h2>Uploaded Items:</h2>
+        <h2>Uploaded Characters:</h2>
         <div id="uploadedItems"></div> <!-- This is where the uploaded objects will be displayed -->
         
     </div>

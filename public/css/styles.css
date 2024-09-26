@@ -16,7 +16,6 @@ section {
     max-width: 100%;
 }
 
-
 h1, h3, h4 {
     font-family: 'Germania One', cursive;
     margin: 0;
@@ -45,9 +44,7 @@ button {
 
 button:hover {
     background-color: #cc2a0d;
-
 }
-
 
 .header-text {
     position: relative;
@@ -71,7 +68,6 @@ button:hover {
     gap: 10px;
 }
 
-
 .buttons-header-container {
     width: 100%;
     display: flex;
@@ -84,35 +80,30 @@ button:hover {
     z-index: 1003;
 }
 
-
-/* Ensure the section fills the viewport and is properly positioned */
 .header-section {
-    position: relative; /* This makes sure the foreground can be positioned relative to this container */
+    position: relative;
     background-image: url(/assets/bg/header-background.png);
-    background-size: cover; /* Ensure it covers the whole section */
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 1095px; /* Make sure it takes the full height of the viewport */
-    width: 100vw; /* Full width */
-    overflow: hidden; /* Ensure no overflow */
+    height: 1095px;
+    width: 100vw;
+    overflow: hidden;
 }
 
-/* Foreground image container */
 .header-fg {
-    position: absolute; /* Positioned over the background */
+    position: absolute;
     top: -10px;
     left: 0;
     right: 0;
-    height: 100%; /* Make it fill the full height of the header */
-    width: 100%; /* Full width */
+    height: 100%;
+    width: 100%;
     background-image: url(/assets/fg/header-foreground.png);
-    background-size: contain; /* Maintain aspect ratio without cropping */
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    z-index: 1001; /* Ensure it sits above the background */
+    z-index: 1001;
 }
-
-/*Character*/
 
 .character {
     position: fixed;
@@ -136,10 +127,9 @@ button:hover {
 .dragon {
     position: relative;
     top: 50%;
-    left: -400px; /* Off-screen to the left initially */
+    left: -400px;
     transform: translateY(-50%);
 }
-
 
 .skov {
     display: flex;
@@ -151,7 +141,7 @@ button:hover {
     background-size: cover;
 }
 
-.ogre{
+.ogre {
     position: relative;
 }
 
@@ -159,7 +149,6 @@ button:hover {
     position: relative;
     right: 5%;
 }
-
 
 .farm-fg {
     position: relative;
@@ -170,7 +159,6 @@ button:hover {
     background-position: center;
     background-size: cover;
 }
-
 
 .skovsump {
     background-image: url(/assets/bg/forest_swamp_transition.png);
@@ -206,9 +194,6 @@ button:hover {
     z-index: 999;
 }
 
-
-
-
 .bro {
     display: flex;
     flex-flow: column;
@@ -219,12 +204,62 @@ button:hover {
     background-size: cover;
 }
 
+.bridgefire-container {
+    display: none;
+    position: absolute;
+}
+
+
+.bridgefire-1 {
+    position: relative;
+    left: 40%;
+    height: 100px;
+    width: 100px;
+    z-index: 1001;
+}
+
+.bridgefire-2 {
+    position: relative;
+    top: -50px;
+    left: 35%;
+    height: 100px;
+    width: 100px;
+    z-index: 1001;
+}
+
+.bridgefire-3 {
+    position: relative;
+    top: -100px;
+    left: 10%;
+    height: 100px;
+    width: 100px;
+    z-index: 1001;
+}
+
+.bridgefire-4 {
+    position: relative;
+    top: -100px;
+    right: 30%;
+    height: 100px;
+    width: 100px;
+    z-index: 1001;
+}
+
+.bridgefire-5 {
+    position: relative;
+    top: -50px;
+    right: 55%;
+    height: 100px;
+    width: 100px;
+    z-index: 1001;
+}
+
+
 .broimg {
     position: relative;
     z-index: 1000;
     width: 100%;
 }
-
 
 .village {
     background-image: url(/assets/bg/village-1-background.jpg);
@@ -248,7 +283,6 @@ button:hover {
     background-size: cover;
 }
 
-
 .castle-wall {
     display: flex;
     justify-content: center;
@@ -264,8 +298,6 @@ button:hover {
 .wizard-div {
     width: 400px;
 }
-
-
 
 .wizard-speechbubble {
     position: relative;
@@ -308,7 +340,6 @@ button:hover {
     background-size: cover;
 }
 
-
 .slot {
     background-image: url(/assets/bg/castle-interior-background.png);
     background-position: center;
@@ -336,7 +367,70 @@ button:hover {
     display: none;
 }
 
+/* Media Queries for Responsiveness */
 
+/* Small screens (tablets and large smartphones) */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 5rem;
+    }
+    h3 {
+        font-size: 2rem;
+    }
+    .header-text {
+        width: 80%;
+        top: 20%;
+    }
+    .buttons-header-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .header-section {
+        height: 800px;
+    }
+    .character {
+        width: 100px;
+        height: 200px;
+    }
+    .dragon {
+        left: -200px;
+    }
+    button {
+        font-size: 1.5rem;
+        height: 80px;
+    }
+}
+
+/* Extra small screens (smartphones) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 3rem;
+    }
+    h3 {
+        font-size: 1.5rem;
+    }
+    .header-text {
+        width: 90%;
+        top: 15%;
+    }
+    .buttons-header-container {
+        gap: 20px;
+    }
+    .header-section {
+        height: 600px;
+    }
+    .character {
+        width: 80px;
+        height: 160px;
+    }
+    .dragon {
+        left: -100px;
+    }
+    button {
+        font-size: 1rem;
+        height: 60px;
+    }
+}
 
 
 
