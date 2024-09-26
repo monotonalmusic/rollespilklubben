@@ -12,7 +12,7 @@ const storage = multer.diskStorage({
     destination: './uploads/', // Folder to store the uploaded files
     filename: (req, file, cb) => {
         cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
-    } 
+    }
 });
 
 // Initialize Multer
@@ -109,6 +109,58 @@ app.delete('/delete', (req, res) => {
     });
 });
 
+// PUT route to edit existing uploads including image replacement
+app.put('/edit', (req, res) => {
+    upload(req, res, (err) => {
+        if (err) {
+            console.error('Upload Error:', err);
+            return res.status(400).send('Error uploading file.');
+        }
+
+        const { filePath, Navn, Race, Klasse, Styrker, Svageheder, MereOm } = req.body;
+
+        // Check if filePath is provided
+        if (!filePath) {
+            return res.status(400).send('filePath is required.');
+        }
+
+        // Find the index of the item to edit
+        const index = uploadedItems.findIndex(item => item.filePath === filePath);
+        if (index === -1) {
+            return res.status(404).send('Item not found.');
+        }
+
+        // If there's a new file, update the image path
+        let updatedFilePath = uploadedItems[index].filePath;
+        if (req.file) {
+            // Remove the old image file
+            const oldFileName = path.join(__dirname, uploadedItems[index].filePath);
+            fs.unlink(oldFileName, (unlinkErr) => {
+                if (unlinkErr) console.error('Error deleting old file:', unlinkErr);
+            });
+
+            // Update the filePath to the new uploaded file
+            updatedFilePath = `/uploads/${req.file.filename}`;
+        }
+
+        // Update the item's metadata
+        uploadedItems[index] = {
+            filePath: updatedFilePath,  // Update the file path if image was changed
+            Navn,
+            Race,
+            Klasse,
+            Styrker,
+            Svageheder,
+            MereOm
+        };
+
+        // Save the updated metadata to file
+        saveMetadataToFile();
+
+        // Respond with the updated item
+        res.json(uploadedItems[index]);
+    });
+});
 
 
 // Serve the uploaded images

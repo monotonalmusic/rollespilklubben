@@ -1,18 +1,18 @@
 // Image preview functionality
-document.querySelector('input[type="file"]').addEventListener('change', function(event) {
+document.querySelector('input[type="file"]').addEventListener('change', function (event) {
     const file = event.target.files[0];
-    
+
     if (file) {
         const reader = new FileReader();
-        
-        reader.onload = function(e) {
+
+        reader.onload = function (e) {
             const previewImage = document.getElementById('preview');
             previewImage.src = e.target.result;
             previewImage.style.display = 'block'; // Show the image preview
         };
 
         reader.readAsDataURL(file);
-    } 
+    }
 });
 
 // JavaScript to handle form submission and display uploaded data
@@ -96,6 +96,12 @@ function displayUploadedItem(data) {
     mereOm.textContent = `Mere om: ${data.MereOm}`;
     itemDiv.appendChild(mereOm);
 
+    // Add an edit button
+    const editBtn = document.createElement('button');
+    editBtn.textContent = 'Edit';
+    editBtn.addEventListener('click', () => editUploadedItem(data));
+    itemDiv.appendChild(editBtn);
+
     // Add a delete button
     const deleteBtn = document.createElement('button');
     deleteBtn.textContent = 'Delete';
@@ -127,6 +133,66 @@ async function deleteUploadedItem(itemDiv, filePath) {
     }
 }
 
+// Function to handle editing of an uploaded item (including changing the image)
+function editUploadedItem(data) {
+    // Populate the edit form with the current metadata
+    document.getElementById('editNavn').value = data.Navn;
+    document.getElementById('editRace').value = data.Race;
+    document.getElementById('editKlasse').value = data.Klasse;
+    document.getElementById('editStyrker').value = data.Styrker;
+    document.getElementById('editSvageheder').value = data.Svageheder;
+    document.getElementById('editMereOm').value = data.MereOm;
+    document.getElementById('editFilePath').value = data.filePath; // Hidden field to store file path
+
+    // Show the current image preview in the edit form
+    const editImagePreview = document.getElementById('editImagePreview');
+    editImagePreview.src = data.filePath;
+    editImagePreview.style.display = 'block';
+
+    // Show the edit form
+    document.getElementById('editFormContainer').style.display = 'block';
+}
+
+// Function to handle form submission for editing (with optional image change)
+document.getElementById('editForm').addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    const formData = new FormData();
+    formData.append('filePath', document.getElementById('editFilePath').value); // File path is required for editing
+    formData.append('Navn', document.getElementById('editNavn').value);
+    formData.append('Race', document.getElementById('editRace').value);
+    formData.append('Klasse', document.getElementById('editKlasse').value);
+    formData.append('Styrker', document.getElementById('editStyrker').value);
+    formData.append('Svageheder', document.getElementById('editSvageheder').value);
+    formData.append('MereOm', document.getElementById('editMereOm').value);
+
+    // Check if a new image was selected for upload
+    const newImageFile = document.getElementById('editImage').files[0];
+    if (newImageFile) {
+        formData.append('image', newImageFile); // Append new image if it exists
+    }
+
+    try {
+        const response = await fetch('/edit', {
+            method: 'PUT',
+            body: formData
+        });
+
+        if (response.ok) {
+            alert('Item updated successfully!');
+            document.getElementById('editFormContainer').style.display = 'none'; // Hide the edit form
+            document.getElementById('uploadedItems').innerHTML = ''; // Clear the list
+            loadUploadedItems(); // Reload the list with updated data
+        } else {
+            alert('Error updating item.');
+        }
+    } catch (err) {
+        console.error('Error:', err);
+        alert('An error occurred while updating the item.');
+    }
+});
+
+
 // Function to load all previously uploaded items when the page loads
 async function loadUploadedItems() {
     try {
@@ -144,3 +210,5 @@ async function loadUploadedItems() {
 // Load uploaded items on page load
 window.onload = loadUploadedItems;
 
+// Initially hide the edit form
+document.getElementById('editFormContainer').style.display = 'none';

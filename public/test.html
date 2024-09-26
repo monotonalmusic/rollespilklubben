@@ -9,6 +9,44 @@
 </head>
 <body>
     <div class="container">
+        <!-- Section to display the uploaded image and details -->
+        <h2>Uploaded Characters:</h2>
+        <div id="uploadedItems"></div> <!-- This is where the uploaded objects will be displayed -->
+
+        <!-- Edit Form Section, hidden by default -->
+        <div id="editFormContainer" style="display:none;">
+            <h2>Edit Character</h2>
+            <form id="editForm" enctype="multipart/form-data">
+                <input type="hidden" id="editFilePath"> <!-- Hidden input to store filePath for editing -->
+
+                <label for="editNavn">Navn:</label>
+                <input type="text" name="editNavn" id="editNavn" placeholder="Enter character name" required><br><br>
+
+                <label for="editRace">Race:</label>
+                <input type="text" name="editRace" id="editRace" placeholder="Enter character race" required><br><br>
+
+                <label for="editKlasse">Klasse:</label>
+                <input type="text" name="editKlasse" id="editKlasse" placeholder="Enter character class" required><br><br>
+
+                <label for="editStyrker">Styrker:</label>
+                <input type="text" name="editStyrker" id="editStyrker" placeholder="Enter character strengths" required><br><br>
+
+                <label for="editSvageheder">Svageheder:</label>
+                <input type="text" name="editSvageheder" id="editSvageheder" placeholder="Enter character weaknesses" required><br><br>
+
+                <label for="editMereOm">Mere om:</label>
+                <textarea name="editMereOm" id="editMereOm" rows="4" placeholder="Tell more about the character" required></textarea><br><br>
+
+                <label for="editImage">Change Image (optional):</label>
+                <input type="file" name="editImage" id="editImage" accept="image/*"><br><br>
+
+                <img id="editImagePreview" src="#" alt="Current Image" style="display:none; max-width: 200px;"><br><br>
+
+                <button type="submit">Update</button>
+                <button type="button" onclick="document.getElementById('editFormContainer').style.display='none'">Cancel</button>
+            </form>
+        </div>
+
         <h1>Upload Your Character's Portrait</h1>
         <!-- Form to upload image and character data -->
         <form id="uploadForm" enctype="multipart/form-data">
@@ -35,17 +73,17 @@
 
             <button type="submit">Upload</button>
         </form>
-        
+
+        <!-- Image Preview Section -->
         <div id="imagePreview">
             <img id="preview" src="#" alt="Image Preview" style="display:none;">
         </div>
-        
-        <!-- Section to display the uploaded image and details -->
-        <h2>Uploaded Characters:</h2>
-        <div id="uploadedItems"></div> <!-- This is where the uploaded objects will be displayed -->
+
+
         
     </div>
 
     <script src="js/script.js"></script>
 </body>
 </html>
+
