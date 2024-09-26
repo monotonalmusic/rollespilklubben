@@ -100,8 +100,9 @@ button:hover {
 /* Foreground image container */
 .header-fg {
     position: absolute; /* Positioned over the background */
-    top: 0;
+    top: -10px;
     left: 0;
+    right: 0;
     height: 100%; /* Make it fill the full height of the header */
     width: 100%; /* Full width */
     background-image: url(/assets/fg/header-foreground.png);

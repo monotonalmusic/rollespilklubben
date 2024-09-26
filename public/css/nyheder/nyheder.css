@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Germania+One&display=swap');
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: black;
+    font-family: "Roboto", sans-serif;
+}
+
+.back-button {
+    position: fixed;
+    top: 20px;
+    left: 25px;
+    color: #CF503A;
+    text-decoration: none;
+    font-size: 3em;
+    z-index: 10;
+}
+
+.back-button:hover {
+    color: #cc2a0d;
+}
+
+.text-section {
+    margin: auto;
+    text-align: center;
+    padding: 20px;
+    max-width: 1000px;
+}
+
+.headline_news {
+    font-family: "Germania One", system-ui;
+    font-size: 4em;
+    margin-bottom: 10px;
+    color: rgb(255, 255, 255);
+}
+
+.btn_search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    margin-bottom: 20px; 
+}
+
+#addNewsBtn,
+#searchBar {
+    margin: 0 10px; 
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+#addNewsBtn {
+    background-color: #CF503A;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#addNewsBtn:hover {
+    background-color: #7c342783;
+}
+
+#searchBar {
+    width: 200px; 
+}
+
+.bigbox {
+    background-color: rgba(255, 255, 255, 0.103);
+    width: 60%;
+    margin: auto;
+    padding: 20px;
+    border-radius: 2px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto; 
+    padding: 20px;
+    width: 50%;
+    max-width: 600px;
+}
+
+.close {
+    color: #CF503A; 
+    float: right;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    margin-top: -5px;
+}
+
+.close:hover,
+.close:focus {
+    color: #4d231c;
+}
+
+/* Inputs inside modal */
+.modal-content input[type="text"],
+.modal-content input[type="date"],
+.modal-content textarea,
+.modal-content input[type="file"] {
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    font-family: "Roboto", sans-serif;
+}
+
+/* Modal buttons */
+.modal-content button {
+    background-color: #CF503A;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.modal-content button:hover {
+    background-color: #7c3427;
+}
+
+.image-preview {
+    margin-top: 10px;
+    max-width: 100%;
+}
+
+/* luft inden nyhedsknap */
+#newsContainer {
+    margin-top: 20px;
+}
+
+#newsContainer .news-item {
+    display: flex; 
+    align-items: flex-start;
+    background-color: #cf503a81;
+    margin-bottom: 20px;
+    padding: 20px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.news-image {
+    width: 250px; /* Default width for larger screens */
+    height: auto;
+    margin-right: 20px; 
+    border: 0.5px solid rgb(0, 0, 0);
+}
+
+.text-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.text-content h3 {
+    font-family: "Germania One", sans-serif;
+    font-size: 1.8em;
+    color: #ffffff;
+    font-weight: lighter;
+    margin-bottom: 5px;
+}
+
+.text-content p {
+    color: #ffffff;
+    font-size: 1em;
+    margin-bottom: 5px;
+}
+
+@media screen and (max-width: 768px) {
+    .button-container {
+        flex-direction: column; /* Stack on mobile */
+        align-items: center; /* Center align items */
+    }
+
+    #addNewsBtn,
+    #searchBar {
+        width: 100%; /* Full width for smaller screens */
+        margin: 10px 0; /* Margin above and below */
+    }
+
+    #newsContainer .news-item {
+        flex-direction: column; /* Stack items on mobile */
+        align-items: center; /* Center align items */
+    }
+
+    .text-content h3{
+        font-family: "Germania One", system-ui;
+        font-weight: lighter;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 23px;
+    }
+    .text-content p{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .btn_search{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .news-image {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 0 10px 0;
+    }
+
+
+    .modal-content {
+        width: 90%;
+    }
+
+
+    .bigbox {
+        width: 90%;
+    }
+}

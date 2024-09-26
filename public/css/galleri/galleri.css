@@ -1,0 +1,32 @@
+@import url(galleri_slider.css);
+@import url(galleri_headline.css);
+@import url(galleri_kategorier.css);
+
+@import url('https://fonts.googleapis.com/css2?family=Germania+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: "Roboto", sans-serif;
+    background-color: black;
+    color: white;
+}
+
+.back-button {
+    position: fixed;
+    top: 20px;
+    left: 25px;
+    color: #CF503A;
+    text-decoration: none;
+    font-size: 3em;
+    z-index: 10;
+}
+
+.back-button:hover {
+    color: #cc2a0d;
+}

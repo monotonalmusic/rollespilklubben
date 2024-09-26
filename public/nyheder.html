@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="css/nyheder/nyheder.css">
+    <script src="js/nyheder/nyheder.js" defer></script>
+    <title>Seneste Nyheder</title>
+</head>
+<body>
+
+    <a href="index.html" class="back-button"><i class="fas fa-arrow-left"></i></a>
+
+    <div class="text-section">
+        <p class="headline_news">Seneste Nyheder</p>
+    </div>
+
+    <div class="bigbox">
+        <div class="btn_search">
+        <button id="addNewsBtn">Tilføj nyhed</button>
+        <input type="text" id="searchBar" placeholder="Søg nyheder...">
+        </div>
+
+
+        <div id="newsContainer">
+            <div>
+                <div class="text-content">
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal for at tilføje nyhed -->
+        <div id="newsModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Tilføj Nyhed</h2>
+                <input type="text" id="newsTitle" placeholder="Nyhedens titel">
+                <input type="date" id="newsDate">
+                <textarea id="newsContent" placeholder="Indsæt nyhedstekst"></textarea>
+                <input type="file" id="newsImage" accept="image/*">
+                <div id="imagePreview" class="image-preview"></div>
+                <button id="submitNews">Gem Nyhed</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
