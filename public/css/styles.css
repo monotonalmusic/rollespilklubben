@@ -67,10 +67,10 @@ button:hover {
 }
 
 .logo {
-    height: 100px;
+    height: 150px;
     position: absolute;
     top: 20px;
-    left: 20px;
+    left: 50px;
     z-index: 1005;
 }
 
@@ -421,6 +421,60 @@ button:hover {
     background-size: cover;
     display: none;
 }
+
+/*banners*/
+
+.exclamation-mark {
+    background-image: url(/assets/exclamation.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+}
+
+.exclamation-mark-arrangementer {
+    position: relative;
+    top: 80px;
+    left: 25%;
+    height: 100px;
+    z-index: 1001;
+}
+
+
+
+.arrangementer-banner {
+    background-image: url(/assets/banners/banner_events.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    top: 100px;
+    left: 25%;
+    height: 400px;
+}
+
+.gallery-banner {
+    background-image: url(/assets/banners/banner_gallery.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    bottom: 550px;
+    left: 25%;
+    height: 300px;
+    z-index: 1001;
+}
+
+.exclamation-mark-gallery {
+    position: relative;
+    bottom: 575px;
+    left: 25%;
+    height: 100px;
+    z-index: 1003;
+}
+
+
+
 
 /* Media Queries for Responsiveness */
 

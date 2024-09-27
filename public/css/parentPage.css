@@ -26,6 +26,20 @@ img {
     width: 100%;
 }
 
+.back-button {
+    position: fixed;
+    top: 20px;
+    left: 25px;
+    color: #CF503A;
+    text-decoration: none;
+    font-size: 3em;
+    z-index: 10;
+}
+
+.back-button:hover {
+    color: #cc2a0d;
+}
+
 .container {
     display: flex;
     flex-direction: column;

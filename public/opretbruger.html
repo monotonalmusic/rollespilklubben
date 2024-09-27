@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <title>Medieval Login</title>
+    <title>Opret en Bruger</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Germania+One&display=swap');
 
         body {
-            font-family: 'IM Fell English SC', serif;
+            font-family: 'Germania One', cursive;
             background-image: url('https://images.unsplash.com/photo-1522788452161-92ae36a2f13c');
             background-size: cover;
             color: #fff;
@@ -19,8 +19,27 @@
             height: 100vh;
             background-color: black;
         }
+        a {
+            text-decoration: none;
+            color: white;
+        }
 
-        .login-container {
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 25px;
+            color: #CF503A;
+            text-decoration: none;
+            font-size: 3em;
+            z-index: 10;
+        }
+
+        .back-button:hover {
+            color: #cc2a0d;
+        }
+
+
+        .create-user-container {
             background: rgba(0, 0, 0, 0.8);
             padding: 20px;
             border-radius: 15px;
@@ -31,7 +50,6 @@
         }
 
         h1 {
-            font-family: 'Germania One', cursive;
             font-size: 36px;
             color: #f4d03f;
             text-shadow: 2px 2px #000;
@@ -63,21 +81,6 @@
             background-color: #f1c40f;
         }
 
-        .back-button {
-            position: fixed;
-            top: 20px;
-            left: 25px;
-            color: #CF503A;
-            text-decoration: none;
-            font-size: 3em;
-            z-index: 1000;
-        }       
-
-        .back-button:hover {
-            color: #cc2a0d;
-        }
-
-
         .scroll-border {
             border: 5px solid #f4d03f;
             border-radius: 15px;
@@ -94,28 +97,38 @@
     </style>
 </head>
 <body>
+    <a href="index.html" class="back-button"><i class="fas fa-arrow-left"></i></a>
 
-    <div class="login-container scroll-border">
-        <a href="index.html" class="back-button"><i class="fas fa-arrow-left"></i></a>
-        <h1>Fremsæt eders login oplysninger</h1>
-        
-        <input type="text" id="username" placeholder="Brugernavn" required>
-        <input type="password" id="password" placeholder="Adgangskode" required>
-        <button onclick="login()">Log ind</button>
+    <div class="create-user-container scroll-border">
+        <h1>Opret en bruger</h1>
+        <p>Indtast dine oplysninger, tapre ridder!</p>
+        <input type="text" id="new-username" placeholder="Brugernavn" required>
+        <input type="password" id="new-password" placeholder="Adgangskode" required>
+        <input type="text" name="repeat-password" placeholder="Gentag adgangskode" id="repeat-password">
+        <button onclick="createUser()">Opret Bruger</button>
+        <a href="login.html"><p>Allerede bruger? Log ind</p></a>
     </div>
+
+    
 
 
     <script>
-        function login() {
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
+        function createUser() {
+            const newUsername = document.getElementById('new-username').value;
+            const newPassword = document.getElementById('new-password').value;
+            const repeatPassword = document.getElementById('repeat-password').value;
 
-            if(username && password) {
-                localStorage.setItem('username', username);
-                // Redirect to a new page
-                window.location.href = 'test.html';
+            if (newPassword !== repeatPassword) {
+                alert('Adgangskoderne matcher ikke, ædle ridder!');
+                return;
+            }
+
+            if (newUsername && newPassword ) {
+                localStorage.setItem('username', newUsername);
+                // Redirect to a welcome page or confirmation page after creating user
+                window.location.href = 'login.html';
             } else {
-                alert('Enter your username and password, noble one!');
+                alert('Indtast både brugernavn og adgangskode, ædle ridder!');
             }
         }
     </script>

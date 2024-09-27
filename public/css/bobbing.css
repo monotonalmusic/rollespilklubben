@@ -26,6 +26,11 @@
     cursor: pointer;
 }
 
+.exclamation-mark {
+    animation: bobbing 1s ease-in-out infinite;
+}
+
+
 @keyframes bobbing {
     0% {
         transform: translateY(0);
