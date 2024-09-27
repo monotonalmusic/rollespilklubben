@@ -1,3 +1,19 @@
+// Function to create and display the username in an h1 tag within a div with class "container"
+function displayUsername() {
+    const username = localStorage.getItem('username');
+    const containerDiv = document.querySelector('.container');
+
+    // Create an h1 element and set its text
+    const h1 = document.createElement('h1');
+    h1.textContent = `Vær hilset, ${username}!`;
+
+    // Insert the h1 as the first element in the container
+    containerDiv.prepend(h1);
+}
+
+// Call the function to display the username
+displayUsername();
+
 // Function to update the visibility of the header
 function updateHeaderVisibility() {
     const uploadedItems = document.getElementById('uploadedItems');

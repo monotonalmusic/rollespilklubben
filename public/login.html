@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medieval Login</title>
+    <style>
+        body {
+            font-family: 'MedievalSharp', cursive;
+            background-image: url('https://images.unsplash.com/photo-1522788452161-92ae36a2f13c');
+            background-size: cover;
+            color: #fff;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }
+
+        .login-container {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 15px;
+            width: 300px;
+            margin: auto;
+            margin-top: 15%;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #f4d03f;
+            text-shadow: 2px 2px #000;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            padding: 10px;
+            width: 90%;
+            margin: 10px 0;
+            border: 2px solid #f4d03f;
+            border-radius: 5px;
+            background: #fff;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #f4d03f;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            color: black;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        button:hover {
+            background-color: #f1c40f;
+        }
+
+        .scroll-border {
+            border: 5px solid #f4d03f;
+            border-radius: 15px;
+            padding: 10px;
+            box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.5);
+            background-image: url('https://cdn.pixabay.com/photo/2017/10/15/08/49/scroll-2857958_1280.png');
+            background-size: 100% 100%;
+        }
+
+        footer {
+            margin-top: 20px;
+            color: #ddd;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container scroll-border">
+        <h1>Log ind!</h1>
+        <input type="text" id="username" placeholder="Username" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <button onclick="login()">TRÆDE INDENFOR</button>
+    </div>
+
+
+    <script>
+        function login() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if(username && password) {
+                localStorage.setItem('username', username);
+                // Redirect to a new page
+                window.location.href = 'test.html';
+            } else {
+                alert('Enter your username and password, noble one!');
+            }
+        }
+    </script>
+
+</body>
+</html>
