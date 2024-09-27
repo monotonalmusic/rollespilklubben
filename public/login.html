@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <title>Medieval Login</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Germania+One&display=swap');
+
         body {
-            font-family: 'MedievalSharp', cursive;
+            font-family: 'IM Fell English SC', serif;
             background-image: url('https://images.unsplash.com/photo-1522788452161-92ae36a2f13c');
             background-size: cover;
             color: #fff;
@@ -14,6 +17,7 @@
             margin: 0;
             padding: 0;
             height: 100vh;
+            background-color: black;
         }
 
         .login-container {
@@ -27,6 +31,7 @@
         }
 
         h1 {
+            font-family: 'Germania One', cursive;
             font-size: 36px;
             color: #f4d03f;
             text-shadow: 2px 2px #000;
@@ -43,6 +48,7 @@
         }
 
         button {
+            font-family: 'Germania One', cursive;
             padding: 10px 20px;
             background-color: #f4d03f;
             border: none;
@@ -56,6 +62,21 @@
         button:hover {
             background-color: #f1c40f;
         }
+
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 25px;
+            color: #CF503A;
+            text-decoration: none;
+            font-size: 3em;
+            z-index: 1000;
+        }       
+
+        .back-button:hover {
+            color: #cc2a0d;
+        }
+
 
         .scroll-border {
             border: 5px solid #f4d03f;
@@ -75,10 +96,12 @@
 <body>
 
     <div class="login-container scroll-border">
-        <h1>Log ind!</h1>
+        <a href="index.html" class="back-button"><i class="fas fa-arrow-left"></i></a>
+        <h1>Fremsæt eders login oplysninger</h1>
+        
         <input type="text" id="username" placeholder="Username" required>
         <input type="password" id="password" placeholder="Password" required>
-        <button onclick="login()">TRÆDE INDENFOR</button>
+        <button onclick="login()">Log ind</button>
     </div>
 
 
