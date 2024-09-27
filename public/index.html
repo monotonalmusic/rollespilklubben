@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/styles.css">
@@ -8,17 +8,34 @@
     <link rel="stylesheet" href="/css/cat.css">
     <link rel="stylesheet" href="/css/archer.css">
     <link rel="stylesheet" href="/css/rotate.css">
+    <link rel="stylesheet" href="/css/bobbing.css">
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <script src="/js/app.js" defer></script>
     <script src="/js/observer.js" defer></script>
     <script src="/js/rotate.js" defer></script>
     <title>Home</title>
-</head>
-<body>
+  </head>
+  <body>
     <main>
+      <a href="#top-section" class="top-link">
+        <div class="devil-container">
+          <img src="assets/sprites/devil-speech-bubble.gif" alt="" class="devil-speech-bubble">
+          <img src="assets/sprites/devil_shadow.png" alt="" class="devil">
+        </div>    
+      </a>
       
-      <section class="header-section">
+      <div class="character">
+        <img id="frame-1" src="assets/sprites/player/main-character-frame-1.png" alt="Frame 1">
+        <img id="frame-2" src="assets/sprites/player/main-character-frame-2.png" alt="Frame 2">
+        <img id="frame-3" src="assets/sprites/player/main-character-frame-3.png" alt="Frame 3">
+        <img id="frame-4" src="assets/sprites/player/main-character-frame-4.png" alt="Frame 4">
+        <img id="frame-5" src="assets/sprites/player/main-character-frame-5.png" alt="Frame 5">
+        <img id="frame-6" src="assets/sprites/player/main-character-frame-6.png" alt="Frame 6">
+       
+      </div>
+      
+      <section class="header-section" id="top-section">
         <div class="header-fg"></div>
         
         <div class="header-text">
@@ -70,15 +87,6 @@
           </div>
         </div>
       </section>
-      <div class="character">
-        <img id="frame-1" src="assets/sprites/player/main-character-frame-1.png" alt="Frame 1">
-        <img id="frame-2" src="assets/sprites/player/main-character-frame-2.png" alt="Frame 2">
-        <img id="frame-3" src="assets/sprites/player/main-character-frame-3.png" alt="Frame 3">
-        <img id="frame-4" src="assets/sprites/player/main-character-frame-4.png" alt="Frame 4">
-        <img id="frame-5" src="assets/sprites/player/main-character-frame-5.png" alt="Frame 5">
-        <img id="frame-6" src="assets/sprites/player/main-character-frame-6.png" alt="Frame 6">
-       
-      </div>
       <section class="skovsump">
         <div class="forestswamp-fg"></div>
         <div class="dragon-container">

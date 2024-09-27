@@ -1,0 +1,39 @@
+.devil {
+    height: 75px;
+    border-radius: 50%;
+    z-index: 1005;
+
+    /* Position the element in the bottom right corner */
+    position: fixed;
+    right: 20px;
+    bottom: 10px;
+
+    /* Subtle bobbing animation */
+    animation: bobbing 2s ease-in-out infinite;
+}
+
+.devil-speech-bubble {
+    height: 50px;
+    position: fixed;
+    right: 100px;
+    bottom: 75px;
+    z-index: 1005;
+
+    animation: bobbing 2s ease-in-out infinite;
+}
+
+.top-link {
+    cursor: pointer;
+}
+
+@keyframes bobbing {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}

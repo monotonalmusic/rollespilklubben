@@ -52,6 +52,7 @@ button:hover {
     background-color: #cc2a0d;
 }
 
+
 .header-text {
     position: relative;
     top: 25%;
@@ -118,6 +119,7 @@ button:hover {
     transform: translate(-50%, -50%);
     width: 150px;
     height: 300px;
+    z-index: 1000;
 }
 
 .character img {
