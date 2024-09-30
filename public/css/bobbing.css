@@ -42,3 +42,20 @@
         transform: translateY(0);
     }
 }
+
+@media (max-width: 480px) {
+   .devil {
+        height: 45px;
+        right: 10px;
+        bottom: 10px;
+    }
+
+    .devil-speech-bubble {
+        height: 45px;
+        right: 50px;
+        bottom: 50px;
+    }
+}
+
+
+

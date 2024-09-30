@@ -129,7 +129,7 @@ button:hover {
     height: 100%;
     width: 100%;
     background-image: url(/assets/fg/header-foreground.png);
-    background-size: contain;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     z-index: 1001;
@@ -510,12 +510,9 @@ button:hover {
         flex-direction: column;
         gap: 30px;
     }
-    .header-section {
-        height: 800px;
-    }
     .character {
-        width: 100px;
-        height: 200px;
+        width: 175px;
+        height: 275px;
     }
     .dragon {
         left: -200px;
@@ -534,19 +531,65 @@ button:hover {
     h3 {
         font-size: 1.5rem;
     }
+
+    .fight-container {
+        display: none;
+    }
+
+    .orc-rider {
+        display: none;
+    }
+
+    .ballista {
+        display: none;
+    }
+
+    .gallery-banner {
+        height: 200px;
+        bottom: 200px;
+    }
+
+    .arrangementer-banner {
+        height: 300px;
+        top: 100px;
+    }
+
+    .exclamation-mark-gallery {
+        bottom: 200px;
+    }
+
+    .exclamation-mark {
+        height: 50px;
+    }
+
+    
+
+    .logo {
+        height: 100px;
+        top: 10px;
+        left: 10px;
+    }
+
+    .font {
+        font-size: 2rem !important;
+    }
+    
+    .letter {
+        font-size: 2rem;
+    }
+
+
     .header-text {
         width: 90%;
         top: 15%;
     }
     .buttons-header-container {
         gap: 20px;
-    }
-    .header-section {
-        height: 600px;
+        width: 50vw;
     }
     .character {
-        width: 80px;
-        height: 160px;
+        width: 125px;
+        height: 200px;
     }
     .dragon {
         left: -100px;
@@ -554,6 +597,26 @@ button:hover {
     button {
         font-size: 1rem;
         height: 60px;
+    }
+
+    .bridgefire-container {
+        display: none !important;
+    }
+
+    .shrek-container {
+        display: none;
+    }
+
+    .castle-wizard {
+        height: 200px;
+        top: -5%;
+    }
+
+    .wizard-speechbubble {
+        position: relative;
+        left: 30%;
+        top: -100px;
+        width: 225px;
     }
 }
 

@@ -84,3 +84,44 @@
       background-position: -250px; /* End at the last frame (6 * 100px for 7 frames) */
     }
   }
+
+  @media (max-width: 480px) {
+    .archer-container-1 {
+        top: 20px;
+        width: 100px;
+        height: 151px;
+      }
+    .archer-container-2 {
+        top: 20px;
+        width: 100px;
+        height: 151px;
+      }
+    .archer-container-3 {
+        top: 20px;
+        width: 100px;
+        height: 151px;
+      }
+    .archer-container-4 {
+        top: 20px;
+        width: 100px;
+        height: 151px;
+      }
+    .archer-container-5 {
+        top: 20px;
+        width: 100px;
+        height: 151px;
+      }
+    .archer-container-6 {
+        top: 20px;
+        width: 100px;
+        height: 151px;
+      }
+    .archer-animation-1 {
+        width: 200px;
+        height: 151px;
+      }
+    .archer-animation-2 {
+        width: 200px;
+        height: 151px;
+      }
+  }
