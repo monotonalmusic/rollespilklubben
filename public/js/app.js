@@ -62,4 +62,76 @@ let catAnimation = gsap.fromTo(".cat-container",
     });
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+  const gifImage = document.getElementById('devil-speech-bubble');
+  const gifContainer = document.querySelector('.devil-container');
+
+  // Define the GIF sources
+  const gifOnHover = '/assets/sprites/speechbubbles/devil-speech-bubble-hover-ezgif.com-loop-count.gif'; // Hover GIF
+  const gifOnLeave = '/assets/sprites/speechbubbles/devil-speech-bubble-new-leave-ezgif.com-loop-count.gif'; // Leave GIF
+
+  const hoverGifDuration = 3000; // Duration of the hover GIF in milliseconds (e.g., 3 seconds)
+  let isTransitioning = false; // Flag to track if a transition is happening
+  let hoverTimeout = null; // To store the timeout ID
+  let isMouseInside = false; // Track if the mouse is inside the container
+
+  // Function to set GIF with smooth transition
+  function setGifWithTransition(newSrc) {
+      if (isTransitioning) return; // Prevent interruption
+
+      isTransitioning = true;
+
+      // Change the GIF immediately (no fade-out)
+      gifImage.src = newSrc;
+      gifImage.style.display = 'block'; // Ensure the image is visible
+      gifImage.style.opacity = 1; // Ensure it's fully visible
+
+      // Allow new animations after the duration of the GIF
+      setTimeout(() => {
+          isTransitioning = false;
+      }, hoverGifDuration); // Wait for the hover GIF duration
+  }
+
+  // Event listener for mouse hover
+  gifContainer.addEventListener('mouseover', () => {
+      if (hoverTimeout) clearTimeout(hoverTimeout); // Clear any previous timeout if it exists
+      isMouseInside = true; // Mouse is now inside the container
+      setGifWithTransition(gifOnHover);
+
+      // Prevent mouseout event from interrupting the hover animation by delaying it
+      hoverTimeout = setTimeout(() => {
+          // After the hover GIF duration, check if the mouse is still inside
+          if (!isMouseInside) {
+              // If the mouse already left during the hover, trigger the mouseout action
+              handleMouseOut();
+          } else {
+              // If the mouse is still inside, wait for the actual mouseout
+              gifContainer.addEventListener('mouseout', handleMouseOut);
+          }
+      }, hoverGifDuration); // Wait for the hover GIF duration
+  });
+
+  // Function to handle mouse out event
+  function handleMouseOut() {
+    if (gifImage.src === gifOnLeave) {
+      return;
+    } else {
+      setGifWithTransition(gifOnLeave); // Transition to the leave GIF
+      gifContainer.removeEventListener('mouseout', handleMouseOut); // Remove the mouseout listener
+      isMouseInside = false; // Mouse is now outside the container
+
+    }
+  }
+
+  // Detect when the mouse leaves the container
+  gifContainer.addEventListener('mouseout', () => {
+      isMouseInside = false; // Set the flag to false when mouse leaves
+      // If the timeout has finished, trigger the mouseout animation immediately
+      if (!isTransitioning) {
+          handleMouseOut();
+      }
+  });
+});
+
+
 

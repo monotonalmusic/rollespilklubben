@@ -23,6 +23,17 @@
 
 
 @media (max-width: 768px) {
+  .gandalf-animation {
+    left: 40%;
+    top: 250px;
+    width: 200px;
+    height: 200px;
+  }
+
+  .gandalf-speech-bubble {
+    top: -25px;
+    height: 75px;
+  }
  
 }
 

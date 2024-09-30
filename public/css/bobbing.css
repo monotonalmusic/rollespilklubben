@@ -18,7 +18,6 @@
     right: 100px;
     bottom: 75px;
     z-index: 1005;
-
     animation: bobbing 2s ease-in-out infinite;
 }
 
@@ -43,6 +42,19 @@
     }
 }
 
+@media (max-width: 768px) {
+   .devil {
+        height: 100px;
+        right: 10px;
+        bottom: 10px;
+    }
+
+    .devil-speech-bubble {
+        height: 100px;
+        right: 50px;
+        bottom: 50px;
+    }
+}
 @media (max-width: 480px) {
    .devil {
         height: 45px;

@@ -228,6 +228,7 @@ button:hover {
 }
 
 .swamp-fg {
+    bottom: 700px;
     position: relative;
     z-index: 1000;
     height: 100%;
@@ -240,7 +241,6 @@ button:hover {
 .shrek-container {
     position: relative;
     left: 70%;
-    top: 87%;
     z-index: 999;
 }
 
@@ -332,11 +332,52 @@ button:hover {
     background-size: cover;
 }
 
+.villager-container {
+    height: 150px;
+    width: 150px;
+    position: relative;
+    left: 20%;
+    top: -450px;
+    z-index: 1002;
+}
+
+.peasant-couple {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    z-index: 1001;
+}
+
+.peasant-container {
+    height: 150px;
+    width: 150px;
+    position: relative;
+    left: 20%;
+    top: -1000px;
+    z-index: 1002;
+}
+
+.peasant {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    z-index: 1001;
+}
+.haystack {
+    top: -150px;
+    left: 100px;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    z-index: 999;
+}
+
 .vindebro {
     background-image: url(/assets/bg/site_background.png);
     background-position: center;
     background-size: cover;
 }
+
 
 .castle-wall {
     display: flex;
@@ -430,6 +471,7 @@ button:hover {
     z-index: 1005;
 }
 
+
 .contact-scroll {
     height: 175px;
     position: absolute;
@@ -450,7 +492,7 @@ button:hover {
 
 .exclamation-mark-arrangementer {
     position: relative;
-    top: 80px;
+    top: -350px;
     left: 25%;
     height: 100px;
     z-index: 1001;
@@ -464,9 +506,10 @@ button:hover {
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
-    top: 100px;
+    top: -400px;
     left: 25%;
     height: 400px;
+    z-index: 1002;
 }
 
 .gallery-banner {
@@ -485,6 +528,26 @@ button:hover {
     position: relative;
     bottom: 575px;
     left: 25%;
+    height: 100px;
+    z-index: 1003;
+}
+
+.news-banner {
+    background-image: url(/assets/banners/banner_news.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    bottom: 550px;
+    right: 10%;
+    height: 250px;
+    z-index: 1001;
+}
+
+.exclamation-mark-news {
+    position: relative;
+    bottom: 400px;
+    right: 10%;
     height: 100px;
     z-index: 1003;
 }
@@ -509,7 +572,34 @@ button:hover {
     .buttons-header-container {
         flex-direction: column;
         gap: 30px;
+        width: 50%;
     }
+
+    .orc-rider {
+        display: none;
+    }
+
+    .shrek {
+        display: none;
+    }
+
+    .bridgefire-container {
+        display: none !important;
+    }
+
+    .castle-wizard {
+        height: 200px;
+        top: 50px;
+    }
+
+    .wizard-speechbubble {
+        position: relative;
+        left: 30%;
+        top: -50px;
+        width: 400px;
+    }
+
+
     .character {
         width: 175px;
         height: 275px;
@@ -562,7 +652,6 @@ button:hover {
         height: 50px;
     }
 
-    
 
     .logo {
         height: 100px;

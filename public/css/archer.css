@@ -85,6 +85,12 @@
     }
   }
 
+  @media (max-width: 768px) {
+    .archer-container-1, .archer-container-2, .archer-container-3, .archer-container-4, .archer-container-5, .archer-container-6 {
+        top: 100px;
+      } 
+  }
+
   @media (max-width: 480px) {
     .archer-container-1 {
         top: 20px;
@@ -125,3 +131,4 @@
         height: 151px;
       }
   }
+
