@@ -422,6 +422,22 @@ button:hover {
     display: none;
 }
 
+.exclamation-mark-contact {
+    height: 100px;
+    position: relative;
+    left: 8%;
+    bottom: 500px;
+    z-index: 1005;
+}
+
+.contact-scroll {
+    height: 175px;
+    position: absolute;
+    left: 44%;
+    bottom: 200px;
+    z-index: 1005;
+}
+
 /*banners*/
 
 .exclamation-mark {
