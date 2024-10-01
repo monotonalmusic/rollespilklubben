@@ -468,11 +468,11 @@ button:hover {
     position: relative;
     left: 8%;
     bottom: 500px;
-    z-index: 1005;
 }
 
 
 .contact-scroll {
+    cursor: pointer;
     height: 175px;
     position: absolute;
     left: 44%;
@@ -486,7 +486,9 @@ button:hover {
     background-image: url(/assets/exclamation.png);
     background-size: contain;
     background-position: center;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; 
+    z-index: 1003;
+    height: 100px;
     
 }
 
@@ -494,8 +496,6 @@ button:hover {
     position: relative;
     top: -350px;
     left: 25%;
-    height: 100px;
-    z-index: 1001;
 }
 
 
@@ -528,8 +528,6 @@ button:hover {
     position: relative;
     bottom: 575px;
     left: 25%;
-    height: 100px;
-    z-index: 1003;
 }
 
 .news-banner-div {
@@ -552,8 +550,6 @@ button:hover {
 .exclamation-mark-news {
     position: relative;
     bottom: 400px;
-    height: 100px;
-    z-index: 1003;
 }
 
 
@@ -731,6 +727,18 @@ button:hover {
     .villager-container {
         display: none;
     }
+
+    .contact-scroll {
+        height: 100px;
+        bottom: 200px;
+    }
+
+    .exclamation-mark-contact {
+        height: 50px;
+        left: 20%;
+        bottom: 350px;
+    }
+    
 }
 
 

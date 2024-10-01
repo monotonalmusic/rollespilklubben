@@ -26,7 +26,7 @@
             border-radius: 15px;
             width: 300px;
             margin: auto;
-            margin-top: 15%;
+            margin-top: 20%;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
         }
 
@@ -65,7 +65,7 @@
 
         .back-button {
             position: fixed;
-            top: 20px;
+            top: 10px;
             left: 25px;
             color: #CF503A;
             text-decoration: none;
@@ -99,8 +99,8 @@
         <a href="index.html" class="back-button"><i class="fas fa-arrow-left"></i></a>
         <h1>Fremsæt eders login oplysninger</h1>
         
-        <input type="text" id="username" placeholder="Brugernavn" required>
-        <input type="password" id="password" placeholder="Adgangskode" required>
+        <input type="text" id="username" placeholder="Brugernavn" autocomplete="off" required>
+        <input type="password" id="password" placeholder="Adgangskode" autocomplete="off" required>
         <button onclick="login()">Log ind</button>
     </div>
 

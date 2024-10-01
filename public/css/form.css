@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Germania+One&display=swap');
+
+
+h1 {
+    color: white;
+    font-size: 25px;
+    font-family: "Germania One";
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.form-container {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1005;
+    bottom: 100px;
+    left: 32%;
+    position: absolute;
+    width: 33vw;
+    margin: 0 auto;
+    background-color: #8e9da2;
+    padding: 20px;
+    border-radius: 2px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+#contactForm {
+    padding: 20px;
+    width: 100%;
+}
+
+h2 {
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input, textarea {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #ccc;
+    border-radius: 2px;
+}
+
+input, textarea:focus {
+    outline: transparent;
+}
+
+input[name=name]:valid {
+    border: 2px solid green;
+}
+input[name=email]:valid {
+    border: 2px solid green;
+}
+textarea[name=message]:valid {
+    border: 2px solid green;
+}
+
+#successMessage {
+    text-align: center;
+    text-wrap: wrap;
+    color: #CF503A;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.close-button {
+    position: absolute;
+    bottom: 600px;
+    left: 85%;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    font-size: 3rem;
+    cursor: pointer;
+    color: #333;
+    z-index: 1005;
+}
+
+.close-button:hover {
+    color: #CF503A !important;
+    background-color: transparent !important;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (max-width: 480px) {
+    .form-container {
+        width: 80vw;
+        left: 5%;
+    }
+}

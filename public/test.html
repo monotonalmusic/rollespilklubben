@@ -18,7 +18,7 @@
         <!-- Edit Form Section, hidden by default -->
         <div id="editFormContainer" style="display:none;">
             <h2>Rediger Karakter</h2>
-            <form id="editForm" enctype="multipart/form-data">
+            <form id="editForm" enctype="multipart/form-data" autocomplete="off">
                 <input type="hidden" id="editFilePath"> <!-- Hidden input to store filePath for editing -->
 
                 <label for="editNavn">Navn:</label>
@@ -51,7 +51,7 @@
 
         <h1>Lav din karakter!</h1>
         <!-- Form to upload image and character data -->
-        <form id="uploadForm" enctype="multipart/form-data">
+        <form id="uploadForm" enctype="multipart/form-data" autocomplete="off">
             <label for="image">Vælg billede:</label>
             <input type="file" name="image" id="image" accept="image/*" required><br><br>
 
