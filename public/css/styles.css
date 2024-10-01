@@ -116,7 +116,7 @@ button:hover {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 1095px;
+    height: 150vh;
     width: 100vw;
     overflow: hidden;
 }
@@ -353,8 +353,8 @@ button:hover {
     width: 150px;
     position: relative;
     left: 20%;
-    top: -1000px;
-    z-index: 1002;
+    top: -110vh;
+    z-index: 999;
 }
 
 .peasant {
@@ -467,7 +467,7 @@ button:hover {
     height: 100px;
     position: relative;
     left: 8%;
-    bottom: 500px;
+    bottom: 550px;
 }
 
 
@@ -475,8 +475,8 @@ button:hover {
     cursor: pointer;
     height: 175px;
     position: absolute;
-    left: 44%;
-    bottom: 200px;
+    left: 47%;
+    bottom: 250px;
     z-index: 1005;
 }
 
