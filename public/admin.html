@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+   
+    <script src="admin.js" defer></script>
+
+    <script type="module" src="js/JSmember/main.js"></script>
+
+    <link rel="stylesheet" href="css/admin/main.css">
+
+    <title>Administration</title>
+
+</head>
+<body>
+    
+<div class="admin">
+
+    <header>
+        <h1>Administration</h1>
+    </header>
+    
+    <section class="small-boxes">
+        <div class="small-box">
+            <h2>Medlems godkendelser</h2>
+            <p class="number">2</p>
+        </div>
+        <!-- <div class="small-box">
+            <h2>Nyheds godkendelser</h2>
+            <p class="number">6</p>
+        </div> -->
+    </section>
+
+<section class="large-boxes">
+    <div class="large-box">
+        <img src="assets/admin/img/lorene-farrugia-UJLAMjEjISo-unsplash.jpg" alt="Image 1" class="box-image">
+        <div class="box-content">
+            <h2>Søren Johansen</h2>
+            <p>Tekst til nyheden eller beskrivelsen her.</p>
+            <p class="godkend">Godkend</p>
+            <p class="afvis">Afvis</p>
+            <button class="open-popup" data-target="#popup1">Nye oplysninger</button>
+        </div>
+    </div>
+    <div class="large-box">
+        <img src="assets/admin/img/hasan-almasi-nK-kAYpJYCA-unsplash.jpg" alt="Image 3" class="box-image">
+        <div class="box-content">
+            <h2>Oliver Kristensen</h2>
+            <p>Tekst til nyheden eller beskrivelsen her.</p>
+            <p class="godkend">Godkend</p>
+            <p class="afvis">Afvis</p>
+            <button class="open-popup" data-target="#popup2">Nye oplysninger</button>
+        </div>
+    </div>
+    <div class="large-box">
+        <img src="assets/admin/img/junior-ferreira-InwWyYGvSQk-unsplash.jpg" alt="Image 1" class="box-image">
+        <div class="box-content">
+            <h2>Ida Clausen</h2>
+            <p>Tekst til nyheden eller beskrivelsen her.</p>
+            <p class="godkend">Godkend</p>
+            <p class="afvis">Afvis</p>
+            <button class="open-popup" data-target="#popup3">Nye oplysninger</button>
+        </div>
+    </div>
+    <div class="large-box">
+        <img src="https://i.pravatar.cc/310" alt="Image 3" class="box-image">
+        <div class="box-content">
+            <h2>Rune Iversen</h2>
+            <p>Tekst til nyheden eller beskrivelsen her.</p>
+            <p class="godkend">Godkend</p>
+            <p class="afvis">Afvis</p>
+            <button class="open-popup" data-target="#popup4">Nye oplysninger</button>
+        </div>
+    </div>
+</section>
+
+    
+
+    <div id="popup1" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 class="namebox">Søren Johansen</h2>
+            <div class="character">
+                <p><strong>Navn:</strong> Bran Blod</p>
+                <p><strong>Race:</strong> Ork</p>
+                <p><strong>Styrker:</strong> Super stærk, kan løfte store ting og elsker at kæmpe!</p>
+                <p><strong>Svagheder:</strong> Bliver let vred og kan være lidt for voldsom, når han leger!</p>
+                <p><strong>Mere om:</strong> Bran drømmer om at blive den sejeste kriger i sin klan og beskytte alle sine venner!</p>
+            </div>
+        </div>
+    </div>
+    
+    <div id="popup2" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 class="namebox">Oliver Kristensen</h2>
+            <div class="character">
+                <p><strong>Navn:</strong> Mira Mørk</p>
+                <p><strong>Race:</strong> Menneske</p>
+                <p><strong>Styrker:</strong> Klog som en ugle, tænker hurtigt og kan lave magi!</p>
+                <p><strong>Svagheder:</strong> Bliver bange for mørket og kan være alt for nysgerrig på hemmeligheder!</p>
+                <p><strong>Mere om:</strong> Mira elsker at læse bøger om trolde og hekse, og hun vil gerne lære alle trylleformularer!</p>
+            </div>
+            
+        </div>
+    </div>
+    
+    <div id="popup3" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 class="namebox">Ida Clausen</h2>
+            <div class="character">
+                <p><strong>Navn:</strong> Livia Lyng</p>
+                <p><strong>Race:</strong> Elver</p>
+                <p><strong>Styrker:</strong> Hurtig som vinden, har en super flot kappe, og er mega god til at skyde med pil!</p>
+                <p><strong>Svagheder:</strong> Er lidt for stolt nogle gange, og hun kigger altid i spejlet!</p>
+                <p><strong>Mere om:</strong> Livia elsker at lege i skoven og tale med dyr. Hun kan også lave blomster til sine venner!</p>
+            </div>
+        </div>
+    </div>
+    
+    <div id="popup4" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 class="namebox">Rune Iversen</h2>
+            <div class="character">
+                <p><strong>Navn:</strong> Thorgal</p>
+                <p><strong>Race:</strong> Dværg</p>
+                <p><strong>Styrker:</strong> Mega stærk, kan bære store sten, og er super god til at bygge ting!</p>
+                <p><strong>Svagheder:</strong> Er ikke så hurtig og kan være lidt sur, når nogen ikke hører efter!</p>
+                <p><strong>Mere om:</strong> Thorgal drømmer om at bygge en kæmpe bro, så han kan lege med sine venner hele tiden!</p>
+            </div>
+        </div>
+    </div>
+    
+    
+
+    <section class="tasks"> 
+        <div class="todo-list">
+            <h2>Arbejdsopgaver</h2>
+            <ul id="task-list"></ul>
+            <input type="text" id="new-task" placeholder="Ny opgave...">
+            <button onclick="addTask()">Tilføj opgave</button>
+        </div>
+    </section>
+
+    
+</div>
+    <!--medlemmer/laura-->
+
+    <div class="containerMember">
+        <h1 class="headerMembers">Medlemmer</h1>
+    
+        <!-- Template til medlemskort -->
+        <template id="member-template">
+            <div class="member-card">
+                
+                <div class="member-info">
+    
+                    <div>
+                        <img src="" alt="Profile Picture">
+                        <div><h3></h3></div>
+                    </div>
+    
+                    <div class="groupitems">
+                        <div >
+                        <p>Spillernavn <div class="player-name"></div></p>
+                        </div>
+                        <div>
+                        <p>Alder <div class="age"></div></p>
+                        </div>
+                    </div>
+    
+                    <div class="groupitems">
+                        <p>Kontakt<div class="contact"></div></p> 
+                        <button class="edit-btn">Rediger</button>
+                    </div>
+    
+                    
+    
+                </div>
+                
+            </div>
+        </template>
+        
+    
+        <!-- Container til medlemskortene -->
+        <div id="members-list"></div>
+    
+        <!-- Popup til redigering -->
+        <div id="popup" class="popup">
+            <div class="popup-content">
+                <div id="close-popup">&times;</div>
+                <h2>Rediger profil</h2>
+                <form id="edit-form">
+                    <label for="name">Navn:</label>
+                    <input type="text" id="name" name="name">
+                    <label for="playerName">Spiller navn:</label>
+                    <input type="text" id="playerName" name="playerName">
+                    <label for="age">Alder:</label>
+                    <input type="number" id="age" name="age">
+                    <label for="contact">Kontakt:</label>
+                    <input type="text" id="contact" name="contact">
+                    <button class="popbutton" type="submit">Gem</button>
+                </form>
+            </div>
+        </div>
+    
+    </div>
+
+        <footer>
+            <div class="footer-container">
+                <div class="footer-element">
+                    <h3 class="contact"><a href="#" >Kontakt</a></h3>
+                    <p>Email: LarpViborg@gmail.com</p>
+                    <p>tlf: 12345678</p>
+                    
+                </div>
+                <div class="footer-element"><h3>Om os</h3>
+                    <p><img src="assets/admin/icon/logo/excaliburLogo.png" alt=""></p>
+                    
+                </div>
+                <div class="footer-element">
+                    <h3>Følg os</h3>
+                    <p><a href="#"><i class="fa-brands fa-facebook"></i></a></p>
+                </div>
+            </div>
+        </footer>
+   
+</body>
+</html>
