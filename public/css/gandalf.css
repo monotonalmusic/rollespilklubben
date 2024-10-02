@@ -1,8 +1,8 @@
 .gandalf-animation {
   position: relative;
   z-index: 1001;
-  left: 43%;
-  top: 350px;
+  left: 44%;
+  top: 400px;
   width: 200px; /* Display width of each frame */
   height: 200px; /* Height of each frame */
   background: url(/assets/sprites/saruman/gandalf_smaller.gif) no-repeat;
@@ -18,6 +18,21 @@
   background: url(/assets/sprites/speechbubbles/pixel-speech-bubble.gif) no-repeat;
   background-size: contain;
   z-index: 1002;
+}
+
+@media (max-width: 1920px) {
+  .gandalf-animation {
+    left: 46%;
+    top: 500px;
+    width: 200px;
+    height: 200px;
+  }
+
+  .gandalf-speech-bubble {
+    top: 100px;
+    height: 75px;
+  }
+  
 }
 
 

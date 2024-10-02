@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <title>Footer with Contact Section</title>
+    <style>
+        /* Import the Roboto font */
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .content {
+            flex: 1;
+        }
+
+        footer {
+            background-color: #818c69;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            width: 100%;
+            flex-wrap: wrap;
+            padding-left: 20vh;
+            padding-right: 20vh;
+        }
+
+        .footer-logo {
+            width: 100px; /* Adjust size as needed */
+        }
+
+        .social-links img,
+        .contact-icons img {
+            width: 30px;
+            margin-left: 10px;
+        }
+
+        .footer-content {
+            
+            display: flex;
+            align-items: center;
+        }
+
+        .custom-logo {
+            margin-right: 20px;
+        }
+
+        .contact-section {
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-section div {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+        }
+
+        .contact-section span {
+            margin-left: 10px;
+        }
+
+        /* Ensure footer stays at the bottom */
+        html, body {
+            height: 100%;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            footer {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-content,
+            .contact-section,
+            .social-links {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="content">
+        <!-- Your main page content goes here -->
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <!-- Placeholder for your custom logo -->
+            <img src="assets/excaliburLogo.png" alt="Custom Logo" class="custom-logo footer-logo">
+        </div>
+
+        <div class="contact-section">
+            <!-- Contact Section with Phone and Email -->
+            <div>
+                <i class="fa-solid fa-phone"></i>
+                <span>+1 234 567 890</span>
+            </div>
+            <div>
+                <i class="fa-solid fa-envelope"></i>
+                <span>contact@yourdomain.com</span>
+            </div>
+        </div>
+
+        <div class="social-links">
+            <a href="https://www.facebook.com/yourpage" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Logo">
+            </a>
+        </div>
+    </footer>
+
+</body>
+</html>
+
