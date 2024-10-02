@@ -44,6 +44,10 @@
                 <label for="editImage">Skift billede (valgfrit):</label>
                 <input type="file" name="editImage" id="editImage" accept="image/*"><br><br>
 
+                <!-- <div id="imagePreview">
+                    <img id="previewEdit" src="#" alt="Billedeksempel" style="display:none;">
+                </div> -->
+
                 <img id="editImagePreview" src="#" alt="Nuværende billede" style="display:none; max-width: 200px;"><br><br>
 
                 <button type="submit">Opdater</button>
@@ -56,6 +60,11 @@
         <form id="uploadForm" enctype="multipart/form-data" autocomplete="off">
             <label for="image">Vælg billede:</label>
             <input type="file" name="image" id="image" accept="image/*" required><br><br>
+
+            <!-- Image Preview Section -->
+            <div id="imagePreview">
+                <img id="preview" src="#" alt="Billedeksempel" style="display:none;">
+            </div>
 
             <label for="Navn">Navn:</label>
             <input type="text" name="Navn" id="Navn" placeholder="Indtast karakterens navn" required><br><br>
@@ -78,10 +87,7 @@
             <button type="submit">Upload</button>
         </form>
 
-         <!-- Image Preview Section -->
-         <div id="imagePreview">
-            <img id="preview" src="#" alt="Billedeksempel" style="display:none;">
-        </div>
+         
         
 
         

@@ -27,7 +27,7 @@ function updateHeaderVisibility() {
 }
 
 // Image preview functionality
-document.querySelector('input[type="file"]').addEventListener('change', function (event) {
+document.getElementById('image').addEventListener('change', function (event) {
     const file = event.target.files[0];
 
     if (file) {
@@ -42,6 +42,7 @@ document.querySelector('input[type="file"]').addEventListener('change', function
         reader.readAsDataURL(file);
     }
 });
+
 
 // JavaScript to handle form submission and display uploaded data
 document.getElementById('uploadForm').addEventListener('submit', async function (e) {
