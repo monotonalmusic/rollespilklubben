@@ -21,6 +21,15 @@
         <div id="editFormContainer" style="display:none;">
             <h2>Rediger Karakter</h2>
             <form id="editForm" enctype="multipart/form-data" autocomplete="off">
+
+                <label for="editImage">Skift billede (valgfrit):</label>
+                <input type="file" name="editImage" id="editImage" accept="image/*"><br><br>
+
+                <!-- <div id="imagePreview">
+                    <img id="previewEdit" src="#" alt="Billedeksempel" style="display:none;">
+                </div> -->
+
+                <img id="editImagePreview" src="#" alt="Nuværende billede" style="display:none; max-width: 200px;"><br><br>
                 <input type="hidden" id="editFilePath"> <!-- Hidden input to store filePath for editing -->
 
                 <label for="editNavn">Navn:</label>
@@ -41,14 +50,7 @@
                 <label for="editMereOm">Mere om:</label>
                 <textarea name="editMereOm" id="editMereOm" rows="4" placeholder="Fortæl mere om karakteren" required></textarea><br><br>
 
-                <label for="editImage">Skift billede (valgfrit):</label>
-                <input type="file" name="editImage" id="editImage" accept="image/*"><br><br>
-
-                <!-- <div id="imagePreview">
-                    <img id="previewEdit" src="#" alt="Billedeksempel" style="display:none;">
-                </div> -->
-
-                <img id="editImagePreview" src="#" alt="Nuværende billede" style="display:none; max-width: 200px;"><br><br>
+                
 
                 <button type="submit">Opdater</button>
                 <button type="button" onclick="document.getElementById('editFormContainer').style.display='none'">Annuller</button>

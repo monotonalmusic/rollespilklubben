@@ -80,5 +80,4 @@ searchBar.oninput = function() {
 };
 
 
-loadNews();
 

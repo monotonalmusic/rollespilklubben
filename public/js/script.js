@@ -232,7 +232,7 @@ document.getElementById('editForm').addEventListener('submit', async function (e
 
         if (response.ok) {
             console.log(response)
-            alert('Genstand opdateret!');
+            alert('Karakter opdateret!');
             document.getElementById('editFormContainer').style.display = 'none'; // Hide the edit form
             document.getElementById('uploadedItems').innerHTML = ''; // Clear the list
             loadUploadedItems(); // Reload the list with updated data
