@@ -185,6 +185,25 @@ function editUploadedItem(data) {
     document.getElementById('editFormContainer').style.display = 'block';
 }
 
+document.getElementById('editImage').addEventListener('change', function(event) {
+    event.preventDefault(); // Prevent the default form submission behavior
+    const fileInput = event.target;
+    const file = fileInput.files[0]; // Get the selected file
+
+    if (file) {
+        // Create a URL for the file to preview it
+        const fileURL = URL.createObjectURL(file);
+
+        // We do NOT update the hidden filePath field here, as the server should handle the new image upload.
+
+        // Update the image preview
+        const editImagePreview = document.getElementById('editImagePreview');
+        editImagePreview.src = fileURL;
+        editImagePreview.style.display = 'block'; // Show the preview if hidden
+    }
+});
+
+
 // Function to handle form submission for editing (with optional image change)
 document.getElementById('editForm').addEventListener('submit', async function (e) {
     e.preventDefault();
@@ -200,6 +219,7 @@ document.getElementById('editForm').addEventListener('submit', async function (e
 
     // Check if a new image was selected for upload
     const newImageFile = document.getElementById('editImage').files[0];
+    console.log(newImageFile);
     if (newImageFile) {
         formData.append('image', newImageFile); // Append new image if it exists
     }
@@ -211,6 +231,7 @@ document.getElementById('editForm').addEventListener('submit', async function (e
         });
 
         if (response.ok) {
+            console.log(response)
             alert('Genstand opdateret!');
             document.getElementById('editFormContainer').style.display = 'none'; // Hide the edit form
             document.getElementById('uploadedItems').innerHTML = ''; // Clear the list
