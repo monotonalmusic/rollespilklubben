@@ -2,7 +2,7 @@
   position: relative;
   z-index: 1001;
   left: 44%;
-  top: 400px;
+  top: 500px;
   width: 200px; /* Display width of each frame */
   height: 200px; /* Height of each frame */
   background: url(/assets/sprites/saruman/gandalf_smaller.gif) no-repeat;
@@ -22,14 +22,14 @@
 
 @media (max-width: 1920px) {
   .gandalf-animation {
-    left: 46%;
-    top: 500px;
+    left: 44%;
+    top: 400px;
     width: 200px;
     height: 200px;
   }
 
   .gandalf-speech-bubble {
-    top: 100px;
+    top: 150px;
     height: 75px;
   }
   

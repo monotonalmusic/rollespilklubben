@@ -75,7 +75,6 @@ button:hover {
 }
 
 
-
 .header-text {
     position: relative;
     top: 25%;
@@ -239,6 +238,7 @@ button:hover {
 }
 
 .shrek-container {
+    top: 75px;
     position: relative;
     left: 70%;
     z-index: 999;

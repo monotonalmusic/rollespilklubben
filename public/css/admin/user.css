@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-
+ 
 */* ===== BASE SITE CSS START ===== */
 *, *::before, *::after{
 box-sizing: border-box;
@@ -7,8 +7,8 @@ margin: 0;
 padding: 0;
 }
 /* ===== BASE SITE CSS END ===== */
-
-
+ 
+ 
 .containerMember {
     font-family: "Roboto";
     margin-block: 10%;
@@ -16,16 +16,16 @@ padding: 0;
     margin-right: 10%;
     color: white;
 }
-
+ 
 .headerMembers {
     text-align: center;
     margin-bottom: 20px;
 }
-
+ 
 p {
     font-weight: bold;
 }
-
+ 
 #members-list {
     display: flex;
     flex-direction: column;
@@ -34,7 +34,7 @@ p {
     gap: 20px;
     width: 100%;
 }
-
+ 
 .member-card {
     background-color: #151515;
     padding: 15px;
@@ -48,42 +48,46 @@ p {
     align-items: center;
     gap: 15px;
 }
-
+ 
 .member-card:hover {
     background-color: rgb(105, 84, 59);
 }
-
+ 
 .groupitems {
     display: flex;
     flex-direction: column;
     align-items: left;
     justify-content: center;
+    text-wrap: wrap;
+    height: 100%;
+    width: 100%;
 }
-
+ 
 .member-card img {
     border-radius: 50%;
     width: 80px;
     height: 80px;
     flex-shrink: 0;
 }
-
+ 
 .member-info {
     display: flex;
+    flex-direction: row;
     justify-content: space-between; /* Sørger for at elementerne står ved siden af hinanden */
     width: 100%;
-    gap: 10px;
+    gap: 8px;
 }
-
+ 
 .member-info div {
     flex: 1; /* Sørger for at hvert element fylder lige meget */
 }
-
+ 
 .member-info h3,
 .member-info p {
     margin: 0; /* Fjern marginer for at sikre, at de står tættere sammen */
 }
-
-
+ 
+ 
 button.edit-btn {
     background-color: #d95300;
     color: white;
@@ -94,11 +98,11 @@ button.edit-btn {
     margin-top: 10px;
     width: 50%;
 }
-
+ 
 button.edit-btn:hover {
     background-color: #ff8b43;
 }
-
+ 
 /* Popup styling */
 .popup {
     display: none;
@@ -109,7 +113,7 @@ button.edit-btn:hover {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
 }
-
+ 
 .popup-content {
     background-color: #fff;
     padding: 20px;
@@ -120,7 +124,7 @@ button.edit-btn:hover {
     transform: translate(-50%, -50%);
     width: 300px;
 }
-
+ 
 #edit-form {
     display: flex;
     flex-direction: column;
@@ -128,19 +132,19 @@ button.edit-btn:hover {
     align-items: left;
     gap: 10px;
 }
-
+ 
 input {
     padding: 10px;
     border-radius: 8px;
     border: 1px solid black;
 }
-
+ 
 #close-popup {
     float: right;
     cursor: pointer;
     font-size: 20px;
 }
-
+ 
 button.popbutton {
     padding: 10px;
     border-radius: 8px;
@@ -150,5 +154,25 @@ button.popbutton {
 }
 button.popbutton:hover {
    background-color: #ff8b43;
-
+ 
+}
+ 
+@media(max-width: 600px) {
+    .member-info {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+ 
+    .groupitems {
+        align-items: center;
+        text-align: left;
+        justify-content: left;
+        padding-bottom: 10px;
+    }
+    img {
+        padding: 10px;
+    }
+    
 }

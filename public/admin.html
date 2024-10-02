@@ -16,66 +16,87 @@
 
 </head>
 <body>
-    
+
+    <a href="index.html" class="back-button"><i class="fas fa-arrow-left"></i></a>
+  
 <div class="admin">
 
     <header>
         <h1>Administration</h1>
     </header>
+
+    <section class="task-section"> 
+        <div class="task-list-container">
+            <h2>Arbejdsopgaver</h2>
+            <input type="text" id="new-task" class="task-input" placeholder="Ny opgave...">
+            <button class="task-add-btn" onclick="addTask()">Tilføj opgave</button>
+            <ul id="task-list"></ul>
+        </div>
+    </section>
+    
     
     <section class="small-boxes">
         <div class="small-box">
             <h2>Medlems godkendelser</h2>
             <p class="number">2</p>
         </div>
-        <!-- <div class="small-box">
-            <h2>Nyheds godkendelser</h2>
-            <p class="number">6</p>
-        </div> -->
+        <div class="small-box">
+            <h2>Aktive brugere</h2>
+            <p class="number">15</p>
+        </div>
+        <div class="small-box">
+            <h2>Opgaver</h2>
+            <p class="number">5</p>
+        </div>
     </section>
+    
 
-<section class="large-boxes">
-    <div class="large-box">
-        <img src="assets/admin/img/lorene-farrugia-UJLAMjEjISo-unsplash.jpg" alt="Image 1" class="box-image">
-        <div class="box-content">
-            <h2>Søren Johansen</h2>
-            <p>Tekst til nyheden eller beskrivelsen her.</p>
-            <p class="godkend">Godkend</p>
-            <p class="afvis">Afvis</p>
-            <button class="open-popup" data-target="#popup1">Nye oplysninger</button>
+    <section class="large-boxes">
+        <div class="large-box">
+            <img src="https://i.pravatar.cc/311" alt="Image 1" class="box-image">
+            <div class="box-content">
+                <h2>Søren Johansen</h2>
+                <div>
+                <button class="godkend">Godkend</button>
+                <button class="afvis">Afvis</button>
+                </div>
+                <button class="open-popup" data-target="#popup1">Nye oplysninger</button>
+            </div>
         </div>
-    </div>
-    <div class="large-box">
-        <img src="assets/admin/img/hasan-almasi-nK-kAYpJYCA-unsplash.jpg" alt="Image 3" class="box-image">
-        <div class="box-content">
-            <h2>Oliver Kristensen</h2>
-            <p>Tekst til nyheden eller beskrivelsen her.</p>
-            <p class="godkend">Godkend</p>
-            <p class="afvis">Afvis</p>
-            <button class="open-popup" data-target="#popup2">Nye oplysninger</button>
+        <div class="large-box">
+            <img src="https://i.pravatar.cc/312" alt="Image 3" class="box-image">
+            <div class="box-content">
+                <h2>Oliver Kristensen</h2>
+                <div>
+                <button class="godkend">Godkend</button>
+                <button class="afvis">Afvis</button>
+                </div>
+                <button class="open-popup" data-target="#popup2">Nye oplysninger</button>
+            </div>
         </div>
-    </div>
-    <div class="large-box">
-        <img src="assets/admin/img/junior-ferreira-InwWyYGvSQk-unsplash.jpg" alt="Image 1" class="box-image">
-        <div class="box-content">
-            <h2>Ida Clausen</h2>
-            <p>Tekst til nyheden eller beskrivelsen her.</p>
-            <p class="godkend">Godkend</p>
-            <p class="afvis">Afvis</p>
-            <button class="open-popup" data-target="#popup3">Nye oplysninger</button>
+        <div class="large-box">
+            <img src="https://i.pravatar.cc/313" alt="Image 1" class="box-image">
+            <div class="box-content">
+                <h2>Ida Clausen</h2>
+                <div>
+                <button class="godkend">Godkend</button>
+                <button class="afvis">Afvis</button>
+                </div>
+                <button class="open-popup" data-target="#popup3">Nye oplysninger</button>
+            </div>
         </div>
-    </div>
-    <div class="large-box">
-        <img src="https://i.pravatar.cc/310" alt="Image 3" class="box-image">
-        <div class="box-content">
-            <h2>Rune Iversen</h2>
-            <p>Tekst til nyheden eller beskrivelsen her.</p>
-            <p class="godkend">Godkend</p>
-            <p class="afvis">Afvis</p>
-            <button class="open-popup" data-target="#popup4">Nye oplysninger</button>
+        <div class="large-box">
+            <img src="https://i.pravatar.cc/310" alt="Image 3" class="box-image">
+            <div class="box-content">
+                <h2>Rune Iversen</h2>
+                <div>
+                <button class="godkend">Godkend</button>
+                <button class="afvis">Afvis</button>
+                </div>
+                <button class="open-popup" data-target="#popup4">Nye oplysninger</button>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
     
 
@@ -135,17 +156,7 @@
             </div>
         </div>
     </div>
-    
-    
 
-    <section class="tasks"> 
-        <div class="todo-list">
-            <h2>Arbejdsopgaver</h2>
-            <ul id="task-list"></ul>
-            <input type="text" id="new-task" placeholder="Ny opgave...">
-            <button onclick="addTask()">Tilføj opgave</button>
-        </div>
-    </section>
 
     
 </div>
@@ -154,37 +165,31 @@
     <div class="containerMember">
         <h1 class="headerMembers">Medlemmer</h1>
     
-        <!-- Template til medlemskort -->
-        <template id="member-template">
-            <div class="member-card">
-                
-                <div class="member-info">
-    
-                    <div>
-                        <img src="" alt="Profile Picture">
-                        <div><h3></h3></div>
-                    </div>
-    
-                    <div class="groupitems">
-                        <div >
-                        <p>Spillernavn <div class="player-name"></div></p>
-                        </div>
-                        <div>
-                        <p>Alder <div class="age"></div></p>
-                        </div>
-                    </div>
-    
-                    <div class="groupitems">
-                        <p>Kontakt<div class="contact"></div></p> 
-                        <button class="edit-btn">Rediger</button>
-                    </div>
-    
-                    
-    
-                </div>
-                
+<!-- Template til medlemskort -->
+<template id="member-template">
+    <div class="member-card">
+        
+        <div class="member-info">
+
+            <div class="groupitems">
+                <img src="" alt="Profile Picture">
+                <div><h3></h3></div>
             </div>
-        </template>
+
+            <div class="groupitems">
+                <p>Spillernavn <div class="player-name"></div></p>
+                <p>Alder <div class="age"></div></p>
+            </div>
+
+            <div class="groupitems">
+                <p>Kontakt<div class="contact"></div></p>
+                <button class="edit-btn">Rediger</button>
+            </div>
+            
+        </div>
+        
+    </div>
+</template>
         
     
         <!-- Container til medlemskortene -->
@@ -210,6 +215,7 @@
         </div>
     
     </div>
+
 
    
 </body>
