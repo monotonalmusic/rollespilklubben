@@ -20,6 +20,14 @@
             background-color: black;
         }
 
+        input[type="text"],
+        input[type="date"],
+        input[type="password"],
+        textarea {
+        font-family: 'IM Fell English SC', serif;
+        }
+
+
         .login-container {
             background: rgba(0, 0, 0, 0.8);
             padding: 20px;
@@ -113,7 +121,7 @@
             if(username && password) {
                 localStorage.setItem('username', username);
                 // Redirect to a new page
-                window.location.href = 'test.html';
+                window.location.href = 'charmanagement.html';
             } else {
                 alert('Enter your username and password, noble one!');
             }

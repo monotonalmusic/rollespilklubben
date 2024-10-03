@@ -9,14 +9,14 @@
   .cat {
     width: 248px; /* Total width of the sprite sheet (4 frames * 32px per frame) */
     height: 63px;
-    background: url(/assets/cat/black_0_frames_bigger.png) no-repeat;
+    background: url(../../assets/cat/black_0_frames_bigger.png) no-repeat;
     animation: run .5s steps(4) infinite;
   }
 
   .cat.new-sprite {
     width: 248px; /* Total width of the sprite sheet (4 frames * 32px per frame) */
     height: 63px;
-    background: url(/assets/cat/black_0_sitting_frames.png) no-repeat;
+    background: url(../../assets/cat/black_0_sitting_frames.png) no-repeat;
     animation: sit .5s steps(3) 1 forwards;
   }
 

@@ -61,7 +61,7 @@
     z-index: 998;
     width: 250px; /* Total width of the sprite sheet (7 frames * 100px per frame) */
     height: 189px;
-    background: url(/assets/sprites/archer/acher_sharpshooter_2frame.png) no-repeat;
+    background: url(../../assets/sprites/archer/acher_sharpshooter_2frame.png) no-repeat;
     background-position: 0; /* Start on the first frame */
     animation: play-archer 3s steps(2) infinite;
   }
@@ -71,7 +71,7 @@
     z-index: 998;
     width: 250px; /* Total width of the sprite sheet (7 frames * 100px per frame) */
     height: 189px;
-    background: url(/assets/sprites/archer/acher_sharpshooter_2frame.png) no-repeat;
+    background: url(../../assets/sprites/archer/acher_sharpshooter_2frame.png) no-repeat;
     background-position: 0; /* Start on the first frame */
     animation: play-archer 3s steps(2) infinite;
   }

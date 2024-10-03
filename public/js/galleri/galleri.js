@@ -80,7 +80,7 @@ if (!imageInput.files.length) {
     imagePreview.src = ''; // Clear the image preview
     imagePreview.style.display = 'none'; // Hide the image preview
     
-    showPopup("Succes: Billede blev tilføjet til galleriet.");
+    showPopup("Billede blev tilføjet til galleriet.");
 }
 }
 

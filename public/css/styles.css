@@ -97,13 +97,17 @@ button:hover {
     gap: 10px;
 }
 
+.parent-button {
+    width: 20vw;
+}
+
 .buttons-header-container {
     width: 100%;
     display: flex;
     justify-content: center;
     gap: 700px;
     position: relative;
-    top: 25%;
+    top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1003;
@@ -620,6 +624,14 @@ button:hover {
     }
     h3 {
         font-size: 1.5rem;
+    }
+
+    .header-section {
+        padding-top: 100px;
+    }
+
+    .parent-button {
+        width: 50vw;
     }
 
     .fight-container {

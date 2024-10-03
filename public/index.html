@@ -3,13 +3,9 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/form.css">
     <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="/css/gandalf.css">
-    <link rel="stylesheet" href="/css/cat.css">
-    <link rel="stylesheet" href="/css/archer.css">
-    <link rel="stylesheet" href="/css/rotate.css">
-    <link rel="stylesheet" href="/css/bobbing.css">
-    <link rel="stylesheet" href="/css/form.css">
+    <link rel="stylesheet" href="css/animations/animationsmain.css">
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <script src="/js/app.js" defer></script>
@@ -83,38 +79,23 @@
           <h3>Være med til en fantasi verden, som overgår din vildeste fantasi...</h3>
         </div>
         <div class="buttons-header-container">
-          <button><a href="parent.html">FORÆLDRE INFO</a></button>
+          <button class="parent-button"><a href="parent.html">FORÆLDRE INFO</a></button>
           <div class="login-button-container">
             <a href="opretbruger.html"><button>BLIV MEDLEM</button></a>
             <a href="login.html"><h4 class="login">ALLEREDE MEDLEM? LOG IND</h4></a>
           </div>
         </div>
-      </section>
-      <section class="skovsump">
-        <div class="forestswamp-fg"></div>
         <div class="dragon-container">
           <img class="dragon" src="/assets/sprites/dragon/dragon.gif"></img>
         </div>
+      </section>
+      <section class="skovsump">
+        <div class="forestswamp-fg"></div>
         <div class="fight-container">
           <img src="assets/sprites/ogre.gif" alt="" class="ogre">
           <img src="assets/sprites/beaten-knight.gif" alt="" class="beaten-knight">
         </div>
         <img src="assets/sprites/orc_rider.gif" class="orc-rider" alt="">
-          <!-- <div class="fogwrapper">
-              <div id="foglayer_01start" class="fogstart">
-                  <div class="image01start"></div>
-                  <div class="image02start"></div>
-                </div>
-                <div id="foglayer_02start" class="fogstart">
-                  <div class="image01start"></div>
-                  <div class="image02start"></div>
-                </div>
-                <div id="foglayer_03start" class="fogstart">
-                  <div class="image01start"></div>
-                  <div class="image02start"></div>
-                </div>
-          </div> -->
-
       </section>
       <section class="sump">
         <a href="arrangementer.html">
@@ -129,21 +110,7 @@
        
         </div>
         <div class="swamp-fg"></div>
-          <!-- <div class="fogwrapper">
-              <div id="foglayer_01" class="fog">
-                  <div class="image01"></div>
-                  <div class="image02"></div>
-                </div>
-                <div id="foglayer_02" class="fog">
-                  <div class="image01"></div>
-                  <div class="image02"></div>
-                </div>
-                <div id="foglayer_03" class="fog">
-                  <div class="image01"></div>
-                  <div class="image02"></div>
-                </div>
-          </div> -->
-          
+
       </section>
       <section class="bro">
         <div class="browrapper">
@@ -261,7 +228,7 @@
         
                 <button type="submit" class="send-button">Send</button>
             </form>
-            <p id="successMessage" class="hidden">Tak for din besked, Vi vender tilbage hurtigst muligt!</p>
+            <p id="successMessage" class="hidden">Tak for din besked, vi vender tilbage hurtigst muligt!</p>
         </div>        
           
         </section>
