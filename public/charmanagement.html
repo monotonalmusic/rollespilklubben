@@ -8,49 +8,41 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
     <script src="js/script.js" defer></script>
-
 </head>
 <body>
     <a href="index.html" class="back-button"><i class="fas fa-arrow-left"></i></a>
     <div class="container">
-        <!-- Section to display the uploaded image and details -->
-        <h2 class="din-karakterer-text">Din Karakterer:</h2>
-        <div id="uploadedItems"></div> <!-- This is where the uploaded objects will be displayed -->
+        <h2 class="din-karakterer-text">Dine Karakterer:</h2>
+        <div id="uploadedItems"></div>
 
-        <!-- Edit Form Section, hidden by default -->
+        <!-- Edit Form Section (Hidden by Default) -->
         <div id="editFormContainer" style="display:none;">
             <h2>Rediger Karakter</h2>
             <form id="editForm" enctype="multipart/form-data" autocomplete="off">
+                <input type="hidden" id="editId"> <!-- Store character ID for edits -->
 
                 <label for="editImage">Skift billede (valgfrit):</label>
                 <input type="file" name="editImage" id="editImage" accept="image/*"><br><br>
 
-                <!-- <div id="imagePreview">
-                    <img id="previewEdit" src="#" alt="Billedeksempel" style="display:none;">
-                </div> -->
-
                 <img id="editImagePreview" src="#" alt="Nuværende billede" style="display:none; max-width: 200px;"><br><br>
-                <input type="hidden" id="editFilePath"> <!-- Hidden input to store filePath for editing -->
 
                 <label for="editNavn">Navn:</label>
-                <input type="text" name="editNavn" id="editNavn" placeholder="Indtast karakterens navn" required><br><br>
+                <input type="text" name="editNavn" id="editNavn" required><br><br>
 
                 <label for="editRace">Race:</label>
-                <input type="text" name="editRace" id="editRace" placeholder="Indtast karakterens race" required><br><br>
+                <input type="text" name="editRace" id="editRace" required><br><br>
 
                 <label for="editKlasse">Klasse:</label>
-                <input type="text" name="editKlasse" id="editKlasse" placeholder="Indtast karakterens klasse" required><br><br>
+                <input type="text" name="editKlasse" id="editKlasse" required><br><br>
 
                 <label for="editStyrker">Styrker:</label>
-                <input type="text" name="editStyrker" id="editStyrker" placeholder="Indtast karakterens styrker" required><br><br>
+                <input type="text" name="editStyrker" id="editStyrker" required><br><br>
 
                 <label for="editSvageheder">Svageheder:</label>
-                <input type="text" name="editSvageheder" id="editSvageheder" placeholder="Indtast karakterens svagheder" required><br><br>
+                <input type="text" name="editSvageheder" id="editSvageheder" required><br><br>
 
                 <label for="editMereOm">Mere om:</label>
-                <textarea name="editMereOm" id="editMereOm" rows="4" placeholder="Fortæl mere om karakteren" required></textarea><br><br>
-
-                
+                <textarea name="editMereOm" id="editMereOm" rows="4" required></textarea><br><br>
 
                 <button type="submit">Opdater</button>
                 <button type="button" onclick="document.getElementById('editFormContainer').style.display='none'">Annuller</button>
@@ -58,40 +50,34 @@
         </div>
 
         <h1>Lav din karakter!</h1>
-        <!-- Form to upload image and character data -->
         <form id="uploadForm" enctype="multipart/form-data" autocomplete="off">
             <label for="image">Vælg billede:</label>
             <input type="file" name="image" id="image" accept="image/*" required><br><br>
 
-            <!-- Image Preview Section -->
             <div id="imagePreview">
                 <img id="preview" src="#" alt="Billedeksempel" style="display:none;">
             </div>
 
             <label for="Navn">Navn:</label>
-            <input type="text" name="Navn" id="Navn" placeholder="Indtast karakterens navn" required><br><br>
+            <input type="text" name="Navn" id="Navn" required><br><br>
 
             <label for="Race">Race:</label>
-            <input type="text" name="Race" id="Race" placeholder="Indtast karakterens race" required><br><br>
+            <input type="text" name="Race" id="Race" required><br><br>
 
             <label for="Klasse">Klasse:</label>
-            <input type="text" name="Klasse" id="Klasse" placeholder="Indtast karakterens klasse" required><br><br>
+            <input type="text" name="Klasse" id="Klasse" required><br><br>
 
             <label for="Styrker">Styrker:</label>
-            <input type="text" name="Styrker" id="Styrker" placeholder="Indtast karakterens styrker" required><br><br>
+            <input type="text" name="Styrker" id="Styrker" required><br><br>
 
             <label for="Svageheder">Svagheder:</label>
-            <input type="text" name="Svageheder" id="Svageheder" placeholder="Indtast karakterens svagheder" required><br><br>
+            <input type="text" name="Svageheder" id="Svageheder" required><br><br>
 
             <label for="MereOm">Mere om:</label>
-            <textarea name="MereOm" id="MereOm" rows="4" placeholder="Fortæl mere om karakteren"></textarea><br><br>
+            <textarea name="MereOm" id="MereOm" rows="4"></textarea><br><br>
 
             <button type="submit">Upload</button>
         </form>
     </div>
-
-    
 </body>
 </html>
-
-

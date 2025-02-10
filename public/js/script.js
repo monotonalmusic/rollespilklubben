@@ -131,6 +131,8 @@ async function deleteUploadedItem(itemDiv, id) {
 
 // Function to edit an uploaded item
 function editUploadedItem(data) {
+    document.getElementById('editFormContainer').style.display = 'block';
+    console.log(data.id)
     document.getElementById('editId').value = data.id;
     document.getElementById('editNavn').value = data.Navn;
     document.getElementById('editRace').value = data.Race;
@@ -143,7 +145,7 @@ function editUploadedItem(data) {
     editImagePreview.src = data.filePath;
     editImagePreview.style.display = 'block';
 
-    document.getElementById('editFormContainer').style.display = 'block';
+    
 }
 
 // Handle edit form submission
