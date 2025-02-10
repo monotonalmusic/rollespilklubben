@@ -1,17 +1,16 @@
+const BASE_URL = 'https://rollespil-backend.onrender.com'; // Set backend base URL
+
 // Function to create and display the username in an h1 tag within a div with class "container"
 function displayUsername() {
     const username = localStorage.getItem('username');
     const containerDiv = document.querySelector('.container');
 
-    // Create an h1 element and set its text
     const h1 = document.createElement('h1');
     h1.textContent = `Vær hilset, ${username}!`;
 
-    // Insert the h1 as the first element in the container
     containerDiv.prepend(h1);
 }
 
-// Call the function to display the username
 displayUsername();
 
 // Function to update the visibility of the header
@@ -19,11 +18,7 @@ function updateHeaderVisibility() {
     const uploadedItems = document.getElementById('uploadedItems');
     const header = document.querySelector('.din-karakterer-text');
 
-    if (uploadedItems.children.length > 0) {
-        header.style.display = 'block'; // Show the header if there are uploaded items
-    } else {
-        header.style.display = 'none'; // Hide the header if there are no uploaded items
-    }
+    header.style.display = uploadedItems.children.length > 0 ? 'block' : 'none';
 }
 
 // Image preview functionality
@@ -32,26 +27,23 @@ document.getElementById('image').addEventListener('change', function (event) {
 
     if (file) {
         const reader = new FileReader();
-
         reader.onload = function (e) {
             const previewImage = document.getElementById('preview');
             previewImage.src = e.target.result;
-            previewImage.style.display = 'block'; // Show the image preview
+            previewImage.style.display = 'block';
         };
-
         reader.readAsDataURL(file);
     }
 });
 
-// JavaScript to handle form submission and display uploaded data
+// Handle form submission for uploads
 document.getElementById('uploadForm').addEventListener('submit', async function (e) {
-    e.preventDefault(); // Prevent the default form submission behavior
+    e.preventDefault();
 
-    // Get the form data
     const formData = new FormData(this);
 
     try {
-        const response = await fetch('/upload/', { // Updated URL
+        const response = await fetch(`${BASE_URL}/upload/`, {
             method: 'POST',
             body: formData
         });
@@ -59,9 +51,9 @@ document.getElementById('uploadForm').addEventListener('submit', async function 
         if (response.ok) {
             const result = await response.json();
             displayUploadedItem(result);
-            this.reset(); // Clear the form fields after successful upload
-            clearImagePreview(); // Clear the image preview after successful upload
-            updateHeaderVisibility(); // Update header visibility after uploading a new item
+            this.reset();
+            clearImagePreview();
+            updateHeaderVisibility();
         } else {
             alert('Error uploading file!');
         }
@@ -74,27 +66,24 @@ document.getElementById('uploadForm').addEventListener('submit', async function 
 // Function to clear the image preview
 function clearImagePreview() {
     const previewImage = document.getElementById('preview');
-    previewImage.src = ''; // Clear the image src
-    previewImage.style.display = 'none'; // Hide the image preview
+    previewImage.src = '';
+    previewImage.style.display = 'none';
 }
 
 // Function to display the uploaded item
 function displayUploadedItem(data) {
     const uploadedItems = document.getElementById('uploadedItems');
 
-    // Create a new div for the uploaded item
     const itemDiv = document.createElement('div');
     itemDiv.className = 'uploaded-item';
-    itemDiv.dataset.id = data.id; // Store the ID instead of filePath
+    itemDiv.dataset.id = data.id;
 
-    // Add the image
     const img = document.createElement('img');
     img.src = data.filePath;
-    img.alt = data.Navn; // Use 'Navn' for alt text
+    img.alt = data.Navn;
     img.style.maxWidth = '200px';
     itemDiv.appendChild(img);
 
-    // Add character details
     const details = `
         <h3>Navn: ${data.Navn}</h3>
         <p>Race: ${data.Race}</p>
@@ -105,28 +94,27 @@ function displayUploadedItem(data) {
     `;
     itemDiv.innerHTML += details;
 
-    // Add an edit button
     const editBtn = document.createElement('button');
     editBtn.textContent = 'Edit';
     editBtn.addEventListener('click', () => editUploadedItem(data));
     itemDiv.appendChild(editBtn);
 
-    // Add a delete button
     const deleteBtn = document.createElement('button');
     deleteBtn.textContent = 'Delete';
     deleteBtn.addEventListener('click', () => deleteUploadedItem(itemDiv, data.id));
     itemDiv.appendChild(deleteBtn);
 
-    // Append the new item to the uploadedItems section
     uploadedItems.appendChild(itemDiv);
     updateHeaderVisibility();
 }
 
-// Function to handle deletion of an uploaded item
+// Function to delete an uploaded item
 async function deleteUploadedItem(itemDiv, id) {
     if (confirm('Er du sikker på, at du vil slette denne genstand?')) {
         try {
-            const response = await fetch(`/delete/?id=${id}/`, { method: 'DELETE' }); // Updated URL
+            const response = await fetch(`${BASE_URL}/delete/?id=${id}/`, {
+                method: 'DELETE'
+            });
 
             if (response.ok) {
                 itemDiv.remove();
@@ -141,7 +129,7 @@ async function deleteUploadedItem(itemDiv, id) {
     }
 }
 
-// Function to handle editing of an uploaded item
+// Function to edit an uploaded item
 function editUploadedItem(data) {
     document.getElementById('editId').value = data.id;
     document.getElementById('editNavn').value = data.Navn;
@@ -151,7 +139,6 @@ function editUploadedItem(data) {
     document.getElementById('editSvageheder').value = data.Svageheder;
     document.getElementById('editMereOm').value = data.MereOm;
 
-    // Show current image preview
     const editImagePreview = document.getElementById('editImagePreview');
     editImagePreview.src = data.filePath;
     editImagePreview.style.display = 'block';
@@ -159,7 +146,7 @@ function editUploadedItem(data) {
     document.getElementById('editFormContainer').style.display = 'block';
 }
 
-// Handle the edit form submission
+// Handle edit form submission
 document.getElementById('editForm').addEventListener('submit', async function (e) {
     e.preventDefault();
 
@@ -178,7 +165,10 @@ document.getElementById('editForm').addEventListener('submit', async function (e
     }
 
     try {
-        const response = await fetch('/edit/', { method: 'PUT', body: formData }); // Updated URL
+        const response = await fetch(`${BASE_URL}/edit/`, {
+            method: 'PUT',
+            body: formData
+        });
 
         if (response.ok) {
             alert('Karakter opdateret!');
@@ -196,7 +186,7 @@ document.getElementById('editForm').addEventListener('submit', async function (e
 // Function to load all previously uploaded items
 async function loadUploadedItems() {
     try {
-        const response = await fetch('/uploads-data/'); // Updated URL
+        const response = await fetch(`${BASE_URL}/uploads-data/`);
         const items = await response.json();
 
         items.forEach(item => {
