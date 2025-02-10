@@ -67,8 +67,8 @@ document.addEventListener('DOMContentLoaded', function() {
   const gifContainer = document.querySelector('.devil-container');
 
   // Define the GIF sources
-  const gifOnHover = '/assets/sprites/speechbubbles/devil-speech-bubble-hover-ezgif.com-loop-count.gif'; // Hover GIF
-  const gifOnLeave = '/assets/sprites/speechbubbles/devil-speech-bubble-new-leave-ezgif.com-loop-count.gif'; // Leave GIF
+  const gifOnHover = 'assets/sprites/speechbubbles/devil-speech-bubble-hover-ezgif.com-loop-count.gif'; // Hover GIF
+  const gifOnLeave = 'assets/sprites/speechbubbles/devil-speech-bubble-new-leave-ezgif.com-loop-count.gif'; // Leave GIF
 
   const hoverGifDuration = 3000; // Duration of the hover GIF in milliseconds (e.g., 3 seconds)
   let isTransitioning = false; // Flag to track if a transition is happening

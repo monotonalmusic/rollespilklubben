@@ -115,7 +115,7 @@ button:hover {
 
 .header-section {
     position: relative;
-    background-image: url(/assets/bg/header-background.png);
+    background-image: url("/public/assets/bg/header-background.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -131,7 +131,7 @@ button:hover {
     right: 0;
     height: 100%;
     width: 100%;
-    background-image: url(/assets/fg/header-foreground.png);
+    background-image: url("/public/assets/fg/header-foreground.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -171,7 +171,7 @@ button:hover {
     flex-flow: column;
     justify-content: center;
     align-items: center;
-    background-image: url(/assets/bg/farmland-background.png);
+    background-image: url("/public/assets/bg/farmland-background.png");
     background-position: center;
     background-size: cover;
 }
@@ -202,13 +202,13 @@ button:hover {
     z-index: 1000;
     height: 100%;
     width: 100%;
-    background-image: url(/assets/fg/farmland-foreground.png);
+    background-image: url("/public/assets/fg/farmland-foreground.png");
     background-position: center;
     background-size: cover;
 }
 
 .skovsump {
-    background-image: url(/assets/bg/forest_swamp_transition.png);
+    background-image: url("/public/assets/bg/forest_swamp_transition.png");
     background-position: center;
     background-size: cover;
 }
@@ -218,14 +218,14 @@ button:hover {
     z-index: 1000;
     height: 100%;
     width: 100%;
-    background-image: url(/assets/fg/forest_swamp_transition_foreground.png);
+    background-image: url("/public/assets/fg/forest_swamp_transition_foreground.png");
     background-position: center;
     background-size: cover;
 }
 
 
 .sump {
-    background-image: url(/assets/bg/swamp_background.png);
+    background-image: url("/public/assets/bg/swamp_background.png");
     background-position: center;
     background-size: cover;
 }
@@ -236,7 +236,7 @@ button:hover {
     z-index: 1000;
     height: 100%;
     width: 100%;
-    background-image: url(/assets/fg/swamp_foreground.png);
+    background-image: url("/public/assets/fg/swamp_foreground.png");
     background-position: center;
     background-size: cover;
 }
@@ -258,7 +258,7 @@ button:hover {
     flex-flow: column;
     justify-content: center;
     align-items: center;
-    background-image: url(/assets/bg/swamp_forest_transition.png);
+    background-image: url("/public/assets/bg/swamp_forest_transition.png");
     background-position: center;
     background-size: cover;
 }
@@ -321,7 +321,7 @@ button:hover {
 }
 
 .village {
-    background-image: url(/assets/bg/village-1-background.jpg);
+    background-image: url("/public/assets/bg/village-1-background.jpg");
     background-position: center;
     background-size: cover;
 }
@@ -331,7 +331,7 @@ button:hover {
     z-index: 1000;
     height: 100%;
     width: 100%;
-    background-image: url(/assets/fg/village-1-foreground.png);
+    background-image: url("/public/assets/fg/village-1-foreground.png");
     background-position: center;
     background-size: cover;
 }
@@ -377,7 +377,7 @@ button:hover {
 }
 
 .vindebro {
-    background-image: url(/assets/bg/site_background.png);
+    background-image: url("/public/assets/bg/site_background.png");
     background-position: center;
     background-size: cover;
 }
@@ -390,7 +390,7 @@ button:hover {
     z-index: 1001;
     height: 100%;
     width: 100%;
-    background-image: url(/assets/castle-wall.png);
+    background-image: url("/public/assets/castle-wall.png");
     background-position: center;
     background-size: cover;
 }
@@ -425,7 +425,7 @@ button:hover {
 }
 
 .slot-entrance {
-    background-image: url(/assets/bg/castle-entrance-background.png);
+    background-image: url("/public/assets/bg/castle-entrance-background.png");
     background-position: center;
     background-size: cover;
 }
@@ -435,13 +435,13 @@ button:hover {
     z-index: 1000;
     height: 100%;
     width: 100%;
-    background-image: url(/assets/fg/castle-entrance-foreground.png);
+    background-image: url("/public/assets/fg/castle-entrance-foreground.png");
     background-position: center;
     background-size: cover;
 }
 
 .slot {
-    background-image: url(/assets/bg/castle-interior-background.png);
+    background-image: url("/public/assets/bg/castle-interior-background.png");
     background-position: center;
     background-size: cover;
 }
@@ -451,7 +451,7 @@ button:hover {
     z-index: 1000;
     height: 100%;
     width: 100%;
-    background-image: url(/assets/fg/castle-interior-foreground.png);
+    background-image: url("/public/assets/fg/castle-interior-foreground.png");
     background-position: center;
     background-size: cover;
 }
@@ -461,7 +461,7 @@ button:hover {
     z-index: 1001;
     height: 100%;
     width: 100%;
-    background-image: url(/assets/castle-interior-brazier.png);
+    background-image: url("/public/assets/castle-interior-brazier.png");
     background-position: center;
     background-size: cover;
     display: none;
@@ -487,7 +487,7 @@ button:hover {
 /*banners*/
 
 .exclamation-mark {
-    background-image: url(/assets/exclamation.png);
+    background-image: url("/public/assets/exclamation.png");
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat; 
@@ -505,7 +505,7 @@ button:hover {
 
 
 .arrangementer-banner {
-    background-image: url(/assets/banners/banner_events.png);
+    background-image: url("/public/assets/banners/banner_events.png");
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -517,7 +517,7 @@ button:hover {
 }
 
 .gallery-banner {
-    background-image: url(/assets/banners/banner_gallery.png);
+    background-image: url("/public/assets/banners/banner_gallery.png");
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -541,7 +541,7 @@ button:hover {
 }
 
 .news-banner {
-    background-image: url(/assets/banners/banner_news.png);
+    background-image: url("/public/assets/banners/banner_news.png");
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
