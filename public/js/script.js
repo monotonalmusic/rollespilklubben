@@ -43,7 +43,6 @@ document.getElementById('image').addEventListener('change', function (event) {
     }
 });
 
-
 // JavaScript to handle form submission and display uploaded data
 document.getElementById('uploadForm').addEventListener('submit', async function (e) {
     e.preventDefault(); // Prevent the default form submission behavior
@@ -52,8 +51,7 @@ document.getElementById('uploadForm').addEventListener('submit', async function 
     const formData = new FormData(this);
 
     try {
-        // Send the form data via POST to the server
-        const response = await fetch('/upload', {
+        const response = await fetch('/upload/', { // Updated URL
             method: 'POST',
             body: formData
         });
@@ -87,7 +85,7 @@ function displayUploadedItem(data) {
     // Create a new div for the uploaded item
     const itemDiv = document.createElement('div');
     itemDiv.className = 'uploaded-item';
-    itemDiv.dataset.filepath = data.filePath; // Store the file path in the data attribute for deletion
+    itemDiv.dataset.id = data.id; // Store the ID instead of filePath
 
     // Add the image
     const img = document.createElement('img');
@@ -96,35 +94,16 @@ function displayUploadedItem(data) {
     img.style.maxWidth = '200px';
     itemDiv.appendChild(img);
 
-    // Add the Navn
-    const name = document.createElement('h3');
-    name.textContent = `Navn: ${data.Navn}`;
-    itemDiv.appendChild(name);
-
-    // Add the Race
-    const race = document.createElement('p');
-    race.textContent = `Race: ${data.Race}`;
-    itemDiv.appendChild(race);
-
-    // Add the Klasse
-    const klasse = document.createElement('p');
-    klasse.textContent = `Klasse: ${data.Klasse}`;
-    itemDiv.appendChild(klasse);
-
-    // Add the Styrker
-    const styrker = document.createElement('p');
-    styrker.textContent = `Styrker: ${data.Styrker}`;
-    itemDiv.appendChild(styrker);
-
-    // Add the Svageheder
-    const svageheder = document.createElement('p');
-    svageheder.textContent = `Svageheder: ${data.Svageheder}`;
-    itemDiv.appendChild(svageheder);
-
-    // Add the MereOm
-    const mereOm = document.createElement('p');
-    mereOm.textContent = `Mere om: ${data.MereOm}`;
-    itemDiv.appendChild(mereOm);
+    // Add character details
+    const details = `
+        <h3>Navn: ${data.Navn}</h3>
+        <p>Race: ${data.Race}</p>
+        <p>Klasse: ${data.Klasse}</p>
+        <p>Styrker: ${data.Styrker}</p>
+        <p>Svageheder: ${data.Svageheder}</p>
+        <p>Mere om: ${data.MereOm}</p>
+    `;
+    itemDiv.innerHTML += details;
 
     // Add an edit button
     const editBtn = document.createElement('button');
@@ -135,26 +114,23 @@ function displayUploadedItem(data) {
     // Add a delete button
     const deleteBtn = document.createElement('button');
     deleteBtn.textContent = 'Delete';
-    deleteBtn.addEventListener('click', () => deleteUploadedItem(itemDiv, data.filePath));
+    deleteBtn.addEventListener('click', () => deleteUploadedItem(itemDiv, data.id));
     itemDiv.appendChild(deleteBtn);
 
     // Append the new item to the uploadedItems section
     uploadedItems.appendChild(itemDiv);
-    updateHeaderVisibility(); // Update header visibility after displaying an uploaded item
+    updateHeaderVisibility();
 }
 
 // Function to handle deletion of an uploaded item
-async function deleteUploadedItem(itemDiv, filePath) {
+async function deleteUploadedItem(itemDiv, id) {
     if (confirm('Er du sikker på, at du vil slette denne genstand?')) {
         try {
-            const response = await fetch(`/delete?filePath=${encodeURIComponent(filePath)}`, {
-                method: 'DELETE'
-            });
+            const response = await fetch(`/delete/?id=${id}`, { method: 'DELETE' }); // Updated URL
 
             if (response.ok) {
-                // Remove the item from the DOM
                 itemDiv.remove();
-                updateHeaderVisibility(); // Update header visibility after deleting an item
+                updateHeaderVisibility();
             } else {
                 alert('Error deleting item!');
             }
@@ -165,51 +141,30 @@ async function deleteUploadedItem(itemDiv, filePath) {
     }
 }
 
-// Function to handle editing of an uploaded item (including changing the image)
+// Function to handle editing of an uploaded item
 function editUploadedItem(data) {
-    // Populate the edit form with the current metadata
+    document.getElementById('editId').value = data.id;
     document.getElementById('editNavn').value = data.Navn;
     document.getElementById('editRace').value = data.Race;
     document.getElementById('editKlasse').value = data.Klasse;
     document.getElementById('editStyrker').value = data.Styrker;
     document.getElementById('editSvageheder').value = data.Svageheder;
     document.getElementById('editMereOm').value = data.MereOm;
-    document.getElementById('editFilePath').value = data.filePath; // Hidden field to store file path
 
-    // Show the current image preview in the edit form
+    // Show current image preview
     const editImagePreview = document.getElementById('editImagePreview');
     editImagePreview.src = data.filePath;
     editImagePreview.style.display = 'block';
 
-    // Show the edit form
     document.getElementById('editFormContainer').style.display = 'block';
 }
 
-document.getElementById('editImage').addEventListener('change', function(event) {
-    event.preventDefault(); // Prevent the default form submission behavior
-    const fileInput = event.target;
-    const file = fileInput.files[0]; // Get the selected file
-
-    if (file) {
-        // Create a URL for the file to preview it
-        const fileURL = URL.createObjectURL(file);
-
-        // We do NOT update the hidden filePath field here, as the server should handle the new image upload.
-
-        // Update the image preview
-        const editImagePreview = document.getElementById('editImagePreview');
-        editImagePreview.src = fileURL;
-        editImagePreview.style.display = 'block'; // Show the preview if hidden
-    }
-});
-
-
-// Function to handle form submission for editing (with optional image change)
+// Handle the edit form submission
 document.getElementById('editForm').addEventListener('submit', async function (e) {
     e.preventDefault();
 
     const formData = new FormData();
-    formData.append('filePath', document.getElementById('editFilePath').value); // File path is required for editing
+    formData.append('id', document.getElementById('editId').value);
     formData.append('Navn', document.getElementById('editNavn').value);
     formData.append('Race', document.getElementById('editRace').value);
     formData.append('Klasse', document.getElementById('editKlasse').value);
@@ -217,45 +172,37 @@ document.getElementById('editForm').addEventListener('submit', async function (e
     formData.append('Svageheder', document.getElementById('editSvageheder').value);
     formData.append('MereOm', document.getElementById('editMereOm').value);
 
-    // Check if a new image was selected for upload
     const newImageFile = document.getElementById('editImage').files[0];
-    console.log(newImageFile);
     if (newImageFile) {
-        formData.append('image', newImageFile); // Append new image if it exists
+        formData.append('image', newImageFile);
     }
 
     try {
-        const response = await fetch('/edit', {
-            method: 'PUT',
-            body: formData
-        });
+        const response = await fetch('/edit/', { method: 'PUT', body: formData }); // Updated URL
 
         if (response.ok) {
-            console.log(response)
             alert('Karakter opdateret!');
-            document.getElementById('editFormContainer').style.display = 'none'; // Hide the edit form
-            document.getElementById('uploadedItems').innerHTML = ''; // Clear the list
-            loadUploadedItems(); // Reload the list with updated data
+            document.getElementById('editFormContainer').style.display = 'none';
+            document.getElementById('uploadedItems').innerHTML = '';
+            loadUploadedItems();
         } else {
-            alert('Fejl ved opdatering af genstand.');
+            alert('Fejl ved opdatering.');
         }
     } catch (err) {
         console.error('Error:', err);
-        alert('En fejl opstod under opdatering af genstanden.');
     }
 });
 
-// Function to load all previously uploaded items when the page loads
+// Function to load all previously uploaded items
 async function loadUploadedItems() {
     try {
-        const response = await fetch('/uploads-data'); // Fetch all uploaded items
+        const response = await fetch('/uploads-data/'); // Updated URL
         const items = await response.json();
 
         items.forEach(item => {
-            displayUploadedItem(item); // Display each uploaded item
+            displayUploadedItem(item);
         });
 
-        // Update header visibility after loading items
         updateHeaderVisibility();
     } catch (err) {
         console.error('Error fetching uploaded items:', err);
@@ -264,7 +211,3 @@ async function loadUploadedItems() {
 
 // Load uploaded items on page load
 window.onload = loadUploadedItems;
-
-// Initially hide the edit form and the header
-document.getElementById('editFormContainer').style.display = 'none';
-document.querySelector('.din-karakterer-text').style.display = 'none';
