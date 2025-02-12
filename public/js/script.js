@@ -112,7 +112,7 @@ function displayUploadedItem(data) {
 async function deleteUploadedItem(itemDiv, id) {
     if (confirm('Er du sikker på, at du vil slette denne genstand?')) {
         try {
-            const response = await fetch(`${BASE_URL}/delete/?id=${id}/`, {
+            const response = await fetch(`${BASE_URL}/delete/?id=${id}`, {
                 method: 'DELETE'
             });
 
