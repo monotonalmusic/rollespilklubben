@@ -79,7 +79,7 @@ function displayUploadedItem(data) {
     itemDiv.dataset.id = data.id;
 
     const img = document.createElement('img');
-    img.src = data.filePath;
+    img.src = `${BASE_URL}${data.filePath}`;
     img.alt = data.Navn;
     img.style.maxWidth = '200px';
     itemDiv.appendChild(img);
